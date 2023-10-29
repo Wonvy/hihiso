@@ -1,0 +1,585 @@
+/*站酷css*/
+
+.zcool {
+	position: relative;
+	height: 100%;
+}
+
+.zcool ul {
+	position: relative;
+	max-width: 1500px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.zcool ul li a {
+	position: relative;
+	width: 250px;
+	height: 188px;
+	float: left;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.zcool ul .z-img img {
+	width: 250px;
+	height: 190px;
+}
+
+.zcool ul .z-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.zcool ul a:hover .z-info {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.zcool ul a.on .z-info{
+	bottom: 20px;
+	opacity: 1;
+}
+
+.zcool ul .z-info h4 {
+	color: #ccc;
+	position: relative;
+	font-size: 16px;
+	text-align: center;
+	top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.zcool ul .z-info img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 20px;
+	bottom: -30px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.zcool ul a:hover .z-info img {
+	bottom: 20px;
+	opacity: 1;
+}
+
+
+
+.zcool ul .z-info span {
+	color: #999;
+	opacity: 0;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 57px;
+	bottom: -30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.zcool ul a:hover .z-info span {
+	bottom: 20px;
+	opacity: 0;
+}
+/*ui中国*/
+
+.uicn {
+	position: relative;
+	height: 100%;
+}
+
+.uicn ul {
+	position: relative;
+	max-width: 1440px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.uicn ul li a {
+	position: relative;
+	width: 240px;
+	height: 180px;
+	float: left;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.uicn ul .z-img img {
+	width: 240px;
+	height: 180px;
+}
+
+.uicn ul .z-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.uicn ul a:hover .z-info {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.uicn ul .z-info h4 {
+	color: #ccc;
+	position: relative;
+	font-size: 16px;
+	text-align: center;
+	top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.uicn ul .z-info img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 20px;
+	bottom: -30px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.uicn ul a:hover .z-info img {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.uicn ul .z-info span {
+	color: #999;
+	opacity: 0;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 57px;
+	bottom: -30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.uicn ul a:hover .z-info span {
+	bottom: 20px;
+	opacity: 1;
+}
+/*优秀网页设计*/
+
+.uisdc {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*	display: flex;*/
+}
+
+.uisdc ul {
+	position: relative;
+	max-width: 1100px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.uisdc ul li a {
+	display: block;
+	float: left;
+	width: 520px;
+	height: 106px;
+	margin: 10px;
+}
+
+.uisdc ul li a img {
+	width: 520px;
+	height: 106px;
+}
+/*UEhtml*/
+
+.uehtml {
+	position: relative;
+	height: 100%;
+}
+
+.uehtml ul {
+	position: relative;
+	max-width: 1400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.uehtml ul li a {
+	position: relative;
+	width: 280px;
+	height: 180px;
+	float: left;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.uehtml ul .z-img img {
+	width: 280px;
+	height: 180px;
+}
+
+.uehtml ul .z-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.uehtml ul a:hover .z-info {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.uehtml ul .z-info h4 {
+	color: #ccc;
+	position: relative;
+	font-size: 16px;
+	text-align: center;
+	top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.uehtml ul .z-info img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 20px;
+	bottom: -30px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.uehtml ul a:hover .z-info img {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.uehtml ul .z-info span {
+	color: #999;
+	opacity: 0;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 57px;
+	bottom: -30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.uehtml ul a:hover .z-info span {
+	bottom: 20px;
+	opacity: 1;
+}
+/*behance*/
+
+.behance {
+	position: relative;
+	height: 100%;
+}
+
+.behance ul {
+	position: relative;
+	max-width: 1400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.behance ul li a {
+	position: relative;
+	width: 230px;
+	height: 180px;
+	float: left;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.behance ul .z-img img {
+	width: 230px;
+	height: 180px;
+}
+
+.behance ul .z-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.behance ul a:hover .z-info {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.behance ul .z-info h4 {
+	color: #ccc;
+	position: relative;
+	font-size: 16px;
+	text-align: center;
+	top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.behance ul .z-info img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 20px;
+	bottom: -30px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.behance ul a:hover .z-info img {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.behance ul .z-info span {
+	color: #999;
+	opacity: 0;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 57px;
+	bottom: -30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.behance ul a:hover .z-info span {
+	bottom: 20px;
+	opacity: 1;
+}
+/*dribbble*/
+
+.dribbble {
+	position: relative;
+	height: 100%;
+}
+
+.dribbble ul {
+	position: relative;
+	max-width: 1400px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.dribbble ul li a {
+	position: relative;
+	width: 230px;
+	height: 180px;
+	float: left;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.dribbble ul .z-img img {
+	width: 230px;
+	height: 180px;
+}
+
+.dribbble ul .z-info {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	top: 0;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.dribbble ul a:hover .z-info {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.dribbble ul .z-info h4 {
+	color: #ccc;
+	position: relative;
+	font-size: 16px;
+	text-align: center;
+	top: 70px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.dribbble ul .z-info img {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 20px;
+	bottom: -30px;
+	border-radius: 50%;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+}
+
+.dribbble ul a:hover .z-info img {
+	bottom: 20px;
+	opacity: 1;
+}
+
+.dribbble ul .z-info span {
+	color: #999;
+	opacity: 0;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	left: 57px;
+	bottom: -30px;
+	transition: all 0.3s ease-in-out;
+}
+
+.dribbble ul a:hover .z-info span {
+	bottom: 20px;
+	opacity: 1;
+}
+/*topys.com*/
+
+.topys {
+	position: relative;
+	width: 100%;
+	height: 68%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+/*
+.topys ul {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+*/
+
+.topys ul {
+	width: 650px;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.topys ul li {
+	position: relative;
+	width: 100%;
+	height: 100px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px #181818 solid;
+	transition: all 0.1s ease-in-out;
+}
+
+.topys ul li:hover {
+	background-color: #111;
+}
+
+.topys ul li a {
+	position: relative;
+	display: block;
+	width: 590px;
+	height: 100px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin: 0 auto;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+}
+
+.topys ul .z-img {
+	position: absolute;
+	left: 30px;
+	width: 180px;
+	height: 100px;
+	transition: all 0.2s ease-in-out;
+}
+
+.topys ul li:hover .z-img {
+	left: 15px;
+	width: 210px;
+	height: 130px;
+}
+
+.topys ul .z-img img {
+	max-width: 100%;
+	max-height: 100%;
+	width: auto;
+	height: auto;
+	transition: all 0.1s ease-in-out;
+	opacity: 0.8;
+}
+
+.topys ul .z-info {
+	position: absolute;
+	width: 360px;
+	height: 100%;
+	left: 260px;
+}
+
+.topys ul li:hover a .z-img img {
+	opacity: 1;
+}
+
+.topys ul .z-info h4 {
+	color: #888;
+	position: relative;
+	font-weight: bold;
+	font-size: 16px;
+	top: 30px;
+	transition: all 0.1s ease-in-out;
+}
+
+.topys ul li:hover .z-info h4 {
+	color: #ccc;
+}
+
+.topys ul li:hover .z-info span {
+	color: #999;
+}
+
+.topys ul .z-info span {
+	color: #444;
+	position: absolute;
+	height: 30px;
+	line-height: 30px;
+	right: 0;
+	bottom: 0;
+	transition: all 0.3s ease-in-out;
+}

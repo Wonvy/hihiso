@@ -1,0 +1,372 @@
+@charset "utf-8";
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+i {
+	font-style: normal;
+}
+
+fieldset,
+img {
+	border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+caption,
+th {
+	text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+q:before,
+q:after {
+	content: '';
+}
+
+abbr,
+acronym {
+	border: 0;
+}
+
+a,
+input {
+	text-decoration: none;
+	color: #666;
+	font: 12px "微软雅黑", Arial;
+}
+/*浏览器滚动条*/
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 5px
+}
+
+::-webkit-scrollbar-button:vertical {
+	display: none;
+}
+
+::-webkit-scrollbar-track:vertical {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+	background: transparent;
+}
+
+::-webkit-scrollbar-track-piece:hover {
+	background: #000;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+	background-color: #3B3B3B;
+}
+
+::-webkit-scrollbar-corner:vertical {
+	background-color: #535353;
+}
+
+::-webkit-scrollbar-resizer:vertical {
+	background-color: #ff0000;
+}
+
+::selection {
+	background: transparent;
+	/*	color: #197a49;*/
+	
+	color: white;
+	/* Safari /} ::-moz-selection{background: #A8141B; color: white; / Firefox */
+}
+
+html,
+body {
+	position: relative;
+	font: 12px "微软雅黑", Arial;
+	color: #737373;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	margin: 0;
+	background: #e6e6e6;
+}
+
+#wrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	transition: all 0.2s ease-in-out;
+}
+
+.search-wrap {
+	position: relative;
+	float: left;
+	width: 30%;
+	min-width: 400px;
+	height: 100%;
+	/*	background: #111;*/
+}
+
+.search-wrap .search {
+	position: relative;
+	width: 340px;
+	height: 50px;
+	background: #fff;
+	border-radius: 25px;
+	line-height: 50px;
+	/*	border: 1px #ccc solid;*/
+	
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.search-wrap .search > input {
+	position: relative;
+	color: #555;
+	display: block;
+	font-size: 18px;
+	background: transparent;
+	height: 50px;
+	border: 0;
+	width: 100%;
+	outline-style: none;
+}
+
+.search-wrap .search > a,
+.search ul.history a {
+	position: relative;
+	top: 10px;
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	/*	transition: all 0.2s ease-in-out;*/
+	
+	cursor: pointer;
+}
+
+.search-wrap .search > a {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.search ul.history a {
+	margin-right: 10px;
+	/*	opacity: 0.55;*/
+}
+
+.search-wrap .search > a img,
+.search ul.history a img {
+	padding: 7px;
+	width: 16px;
+	height: 16px;
+	/*	transition: all 0.2s ease-in-out;*/
+}
+
+.search-wrap .search > a > p,
+.search ul.history a p {
+	display: none;
+}
+
+.search ul.history a {
+	float: left;
+}
+
+.search-wrap .search > a:hover {
+	background-color: #fff;
+	opacity: 1;
+}
+
+.search ul.history a:hover {
+	opacity: 1;
+	background-color: #fff;
+}
+/*bootmarks*/
+
+.bootmarks {
+	position: relative;
+	width: 60%;
+	height: 100%;
+	float: right;
+}
+
+.bootmarks > .link {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	overflow-y: auto;
+}
+
+.bootmarks .link > div {
+	position: relative;
+	width: 160px;
+	height: 140px;
+	float: left;
+	margin-bottom: 40px;
+	margin-right: 70px;
+	border-radius: 10px;
+	transition: all 0.2s ease-in-out;
+}
+
+.bootmarks .link > div > h3 {
+	position: relative;
+	left: 18px;
+	font-size: 16px;
+	color: #197a49;
+	line-height: 40px;
+}
+
+.bootmarks .link > div.on {
+	background-color: #fff;
+}
+
+.bootmarks .link > div > div {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	transition: all 0.2s ease-in-out;
+}
+
+.bootmarks .link > div.on div {
+	z-index: 99;
+	/*	opacity: 1;*/
+	
+	background-color: #fff;
+}
+
+.bootmarks .link .love {
+	/*	transition: all 0.1s ease-in-out;*/
+	
+	width: 100%;
+}
+
+.bootmarks .link .all {
+	transition: all 0.1s ease-in-out;
+	padding-bottom: 10px;
+	max-height: 200px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: none;
+	border-radius: 10px;
+	opacity: 0;
+}
+
+.bootmarks .link .all::-webkit-scrollbar-track-piece {
+	background: #fff;
+}
+
+.bootmarks .link > div.on .all {
+	display: block;
+	opacity: 1;
+}
+/*
+.bootmarks .link > div:hover .all {
+	display: block;
+	opacity: 1;
+}
+*/
+
+.bootmarks .link a {
+	position: relative;
+	left: 10px;
+	display: block;
+	width: 100%;
+	height: 30px;
+	/*	transition: all 0.05s ease-in-out;*/
+	
+	cursor: pointer;
+}
+
+.bootmarks .link a:hover {
+	color: #666;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.bootmarks .link a img {
+	padding: 7px 7px 7px 10px;
+	width: 16px;
+	height: 16px;
+	/*	opacity: 0.6;*/
+	/*	transition: all 0.2s ease-in-out;*/
+}
+
+.bootmarks .link a:hover img {
+	color: #ccc;
+	opacity: 1;
+}
+
+.bootmarks .link a p {
+	position: absolute;
+	top: 0;
+	left: 34px;
+	line-height: 30px;
+}

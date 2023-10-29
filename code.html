@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html style="overflow-y: hidden;">
+
+<head>
+	<meta charset="utf-8">
+	<title>小顽笔记</title>
+	<meta name=“renderer” content=“webkit”>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+	<link rel="stylesheet" href="css/Global.css">
+	<link id="theme" rel="stylesheet" href="css/theme1.css">
+	<!--	<link rel="stylesheet" href="css/other.css">-->
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+
+<body>
+	<div class="Theme">
+		<ul>
+			<li data-theme="theme1">
+				<p>黑色1</p>
+			</li>
+			<li data-theme="theme2">
+				<p>黑色2</p>
+			</li>
+			<li data-theme="theme3">
+				<p>白色1</p>
+			</li>
+			<li data-theme="theme4">
+				<p>白色2</p>
+			</li>
+			<li data-theme="theme5">
+				<p>白色3</p>
+			</li>
+		</ul>
+	</div>
+	<div id="wrapper">
+
+		<!--搜索-->
+		<div class="search-wrap">
+
+			<div class="search">
+
+				<input type="text" name="lname" />
+				<a data-href="http://www.baidu.com/">
+					<img src="favicon/baidu.com.ico">
+					<p>百度</p>
+				</a>
+
+				<div class="keyword"></div>
+
+				<ul class="history link">
+
+					<li>
+						<a data-href="http://www.google.com/" data-search="http://www.google.com/search?q=%s">
+							<img src="favicon/google.com.ico">
+							<p>google</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="https://www.v2ex.com/" data-search="https://www.google.com.hk/search?q=site:v2ex.com/t+"
+							title="V2EX 是一个关于分享和探索的地方">
+							<img src="http://www.google.com/s2/favicons?domain=https://www.v2ex.com/">
+							<p>V2EX</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="https://segmentfault.com/" data-search="https://segmentfault.com/search?q="
+							title="中国领先的开发者技术社区">
+							<img src="http://www.google.com/s2/favicons?domain=segmentfault.com">
+							<p>segmentfault</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="https://juejin.im/ " data-search="https://juejin.im/search?query=" title="一个帮助开发者成长的社区">
+							<img src="http://www.google.com/s2/favicons?domain=https://juejin.im/ ">
+							<p>掘金</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="http://www.jianshu.com/" data-search="http://www.jianshu.com/search?q=">
+							<img src="http://www.google.com/s2/favicons?domain=http://www.jianshu.com/">
+							<p>简书</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="http://www.baidu.com/" data-search="https://www.zhihu.com/search?type=question&q=%s"
+							title="这个标签一看就知道是做循环用的了，用法如下：">
+							<img src="favicon/zhihu.com.ico">
+							<p>知乎</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="http://weixin.sogou.com/"
+							data-search="http://weixin.sogou.com/weixin?type=2&query=%s&ie=utf8">
+							<img src="favicon/sogou.com.ico">
+							<p>微信</p>
+						</a>
+					</li>
+					<li>
+						<a data-href="http://www.baidu.com/" data-search="http://www.baidu.com/s?wd=%s"
+							title="这个标签一看就知道是做循环用的了，用法如下：">
+							<img src="favicon/baidu.com.ico">
+							<p>百度</p>
+						</a>
+					</li>
+
+
+				</ul>
+
+			</div>
+
+
+
+		</div>
+
+		<!--  收藏夹  -->
+		<div class="bootmarks">
+			<div class="link">
+
+
+
+				<!-- 搜索 -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>搜索</h3>
+					<div>
+						<ul class="love">
+							<a data-href="https://www.v2ex.com/" data-search="https://www.google.com.hk/search?q=site:v2ex.com/t+"
+								title="V2EX 是一个关于分享和探索的地方">
+								<img src="http://www.google.com/s2/favicons?domain=www.v2ex.com">
+								<p>V2EX</p>
+							</a>
+							<a data-href="https://segmentfault.com/" data-search="https://segmentfault.com/search?q="
+								title="中国领先的开发者技术社区">
+								<img src="http://www.google.com/s2/favicons?domain=segmentfault.com">
+								<p>segmentfault</p>
+							</a>
+							<a data-href="https://juejin.im/ " data-search="https://juejin.im/search?query=" title="一个帮助开发者成长的社区">
+								<img src="http://www.google.com/s2/favicons?domain=https://juejin.im/ ">
+								<p>掘金</p>
+							</a>
+						</ul>
+						<ul class="all">
+
+							<a data-href="https://stackoverflow.com/" data-search="https://stackoverflow.com/search?q="
+								title="stackoverflow">
+								<img src="http://www.google.com/s2/favicons?domain=https://stackoverflow.com/">
+								<p>stackoverflow</p>
+							</a>
+							<a data-href="https://www.cnblogs.com/"
+								data-search="https://www.google.com/search?q=%s+site%3acnblogs.com%2f&cad=h" title="博客园 - 开发者的网上家园">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.cnblogs.com/">
+								<p>博客园</p>
+							</a>
+							<a data-href="http://bbs.csdn.net/home" data-search="http://so.csdn.net/so/search/s.do?q=%s&q=%s"
+								title="CSDN论坛-最大IT技术交流平台">
+								<img src="http://www.google.com/s2/favicons?domain=http://bbs.csdn.net/home">
+								<p>CSDN论坛</p>
+							</a>
+							<a data-href="http://www.oschina.net/" data-search="https://www.oschina.net/search?scope=project&q=%s"
+								title="开源中国社区">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.oschina.net/">
+								<p>开源中国社区</p>
+							</a>
+
+
+
+						</ul>
+					</div>
+				</div>
+
+				<!-- 教程 -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>教程</h3>
+					<div>
+						<ul class="love">
+							<a data-href="http://www.runoob.com/" data-search="http://www.runoob.com/?s="
+								title="菜鸟教程 -- 学的不仅是技术，更是梦想！">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.runoob.com/">
+								<p>菜鸟学院</p>
+							</a>
+							<a data-href="https://www.w3cschool.cn/tutorial" data-search="https://www.w3cschool.cn/search?w="
+								title="w3cschool - 学技术查资料，从w3cschool开始">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.w3cschool.cn/">
+								<p>w3cschool</p>
+							</a>
+							<a data-href="http://www.jikexueyuan.com/" data-search="http://search.jikexueyuan.com/course/?q=">
+								<img src="favicon/www.jikexueyuan.com.ico">
+								<p>极客学院</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="http://www.imooc.com/" data-search="http://www.imooc.com/search/?words="
+								title="慕课网（IMOOC）是学习编程最简单的免费平台">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.imooc.com/">
+								<p>慕课网</p>
+							</a>
+							<a data-href="https://www.shiyanlou.com/" data-search="https://www.shiyanlou.com/search?search="
+								title="实验楼 - 在线做实验，高效学编程">
+								<img src="http://www.google.com/s2/favicons?domain=www.shiyanlou.com">
+								<p>实验楼</p>
+							</a>
+							<a data-href="http://study.163.com/" data-search="http://study.163.com/courses-search?keyword=" title="">
+								<img src="http://www.google.com/s2/favicons?domain=http://study.163.com/">
+								<p>网易云课堂</p>
+							</a>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Git -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>Git</h3>
+					<div>
+						<ul class="love">
+							<a data-href="https://github.com/" data-search="https://github.com/search?utf8=%E2%9C%93&q=%s&type=">
+								<img src="http://www.google.com/s2/favicons?domain=https://github.com/">
+								<p>github</p>
+							</a>
+							<a data-href="https://coding.net" data-search="https://coding.net/search?q=%s&type=project"
+								title="Coding.net 是一个面向开发者的云端开发平台">
+								<img src="http://www.google.com/s2/favicons?domain=coding.net">
+								<p>Coding</p>
+							</a>
+							<a data-href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000"
+								data-search="" title="廖雪峰-史上最浅显易懂的Git教程">
+								<img src="http://www.google.com/s2/favicons?domain=www.liaoxuefeng.com">
+								<p>史上最浅显易懂的Git教程</p>
+							</a>
+						</ul>
+						<ul class="all">
+
+						</ul>
+					</div>
+				</div>
+
+
+				<!-- Python -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>Python</h3>
+					<div>
+						<ul class="love">
+							<a data-href="http://www.runoob.com/python3/python3-tutorial.html" data-search=""
+								title="Python3 教程 | 菜鸟教程">
+								<img src="http://www.google.com/s2/favicons?domain=www.runoob.com">
+								<p>Python3 教程</p>
+							</a>
+							<a data-href="http://www.runoob.com/python/python-tutorial.html" data-search=""
+								title="Python 基础教程 | 菜鸟教程">
+								<img src="http://www.google.com/s2/favicons?domain=www.runoob.com">
+								<p>Python 基础教程</p>
+							</a>
+							<a data-href="https://pythex.org/" data-search="" title="在线正则表达式">
+								<img src="http://www.google.com/s2/favicons?domain=https://pythex.org/">
+								<p>pythex 在线正则</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="http://python.ctolib.com/"
+								data-search="http://python.ctolib.com/searchall/?term=%s&sdomain=python" title="Python开发社区 | 码库CTOLib">
+								<img src="http://www.google.com/s2/favicons?domain=http://python.ctolib.com/">
+								<p>码库CTOLib</p>
+							</a>
+							<a data-href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000"
+								data-search="" title="Python教程 - 廖雪峰的官方网站">
+								<img src="http://www.google.com/s2/favicons?domain=www.liaoxuefeng.com">
+								<p>Python教程 - 廖雪峰的官方网站</p>
+							</a>
+							<a data-href="http://cuiqingcai.com/category/technique/python" data-search="" title="Python | 静觅">
+								<img src="http://www.google.com/s2/favicons?domain=http://cuiqingcai.com">
+								<p>Python 静觅</p>
+							</a>
+
+						</ul>
+
+					</div>
+				</div>
+
+
+				<!-- Autoit -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>Autoit</h3>
+					<div>
+						<ul class="love">
+							<a data-href="http://www.autoitx.com/" data-search="http://www.autoitx.com/search.php">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.autoitx.com/">
+								<p>AutoIt 中文论坛</p>
+							</a>
+							<a data-href="http://autoit.itiankong.net/" data-search="">
+								<img src="http://www.google.com/s2/favicons?domain=itiankong.net">
+								<p>IT天空</p>
+							</a>
+							<a data-href="http://www.autoitscript.com/"
+								data-search="https://www.google.com/search?q=site%3Aautoitscript.com+">
+								<img src="http://www.google.com/s2/favicons?domain=www.autoitscript.com">
+								<p>AutoIt</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="https://www.isnetwork.at/isn-autoit-studio/" data-search="">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.isnetwork.at/">
+								<p>ISN AutoIt Studio</p>
+							</a>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Adobe -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>Adobe</h3>
+					<div>
+						<ul class="love">
+							<a data-href="https://github.com/Adobe-CEP" data-search="https://github.com/search?q=org%3AAdobe-CEP+">
+								<img src="http://www.google.com/s2/favicons?domain=github.com">
+								<p>Adobe-CEP</p>
+							</a>
+							<a data-href="https://forums.adobe.com/community/premiere/sdk/content"
+								data-search="https://forums.adobe.com/community/premiere/sdk/content?query=">
+								<img src="http://www.google.com/s2/favicons?domain=forums.adobe.com">
+								<p>Premiere SDK</p>
+							</a>
+							<a data-href="http://nullice.com/archives/category/note/%E8%BD%AF%E4%BB%B6%E6%95%99%E7%A8%8B/adobe-cep"
+								data-search="http://nullice.com/?s=" title="">
+								<img src="http://www.google.com/s2/favicons?domain=nullice.com">
+								<p>浅藏的宝藏</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="http://www.brysonmichael.com/premiereapi-home" data-search=""
+								title="hPremiere API — Bryson Michael">
+								<img src="http://www.google.com/s2/favicons?domain=www.brysonmichael.com">
+								<p>Premiere API</p>
+							</a>
+						</ul>
+					</div>
+				</div>
+
+
+				<!-- PHP -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>PHP</h3>
+					<div>
+						<ul class="love">
+							<a data-href="http://laravel-china.github.io/php-the-right-way/" data-search=""
+								title="PHP 之道 | PHP The Right Way 中文版">
+								<img src="http://www.google.com/s2/favicons?domain=http://laravel-china.github.io/php-the-right-way/">
+								<p>PHP 之道</p>
+							</a>
+							<a data-href="http://d.laravel-china.org/" data-search="">
+								<img src="http://www.google.com/s2/favicons?domain=laravel-china.org">
+								<p>Laravel 中国</p>
+							</a>
+							<a data-href="https://www.codecasts.com/" data-search="" title="PHP Laravel Vue.js中文教程和问答社区">
+								<img src="http://www.google.com/s2/favicons?domain=www.codecasts.com">
+								<p>PHP Laravel Vue.js 视频教程</p>
+							</a>
+							<a data-href="https://codepen.io/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://codepen.io/">
+								<p>codepen</p>
+							</a>
+						</ul>
+						<ul class="all">
+						</ul>
+					</div>
+				</div>
+
+				<!-- 其他 -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>其他</h3>
+					<div>
+						<ul class="love">
+							<a data-href="https://react.bootcss.com/" data-search="" title="React-用于构建用户界面的 JAVASCRIPT 库">
+								<img src="http://www.google.com/s2/favicons?domain=https://react.bootcss.com/">
+								<p>React</p>
+							</a>
+							<a data-href="https://cn.vuejs.org/" data-search="" title="渐进式JavaScript 框架">
+								<img src="http://www.google.com/s2/favicons?domain=https://cn.vuejs.org/">
+								<p>Vue.js</p>
+							</a>
+							<a data-href="http://nodejs.cn/" data-search="" title="Node.js 中文网">
+								<img src="http://www.google.com/s2/favicons?domain=http://nodejs.cn/">
+								<p>Node.js</p>
+							</a>
+							<a data-href="http://www.bootcss.com/" data-search="" title="Bootstrap中文网">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.bootcss.com/">
+								<p>Bootstrap</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="http://www.jquery123.com/" data-search="" title="jQuery API 中文文档">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.jquery123.com/">
+								<p>jQuery API</p>
+							</a>
+							<a data-href="http://www.bootcss.com/p/lesscss/" data-search="" title="LESS-一种动态样式语言">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.bootcss.com/p/lesscss/">
+								<p>LESS</p>
+							</a>
+							<a data-href="https://yarn.bootcss.com/" data-search="" title="快速、可靠、安全的依赖管理工具。">
+								<img src="http://www.google.com/s2/favicons?domain=https://yarn.bootcss.com/">
+								<p>Lyarn</p>
+							</a>
+							<a data-href="https://code.google.com/archive/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://code.google.com/archive/">
+								<p>Google Code Archive</p>
+							</a>
+
+						</ul>
+					</div>
+				</div>
+
+				<!-- IDE -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>IDE</h3>
+					<div>
+						<ul class="love">
+							<a data-href="https://atom.io/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://atom.io/">
+								<p>Atom</p>
+							</a>
+							<a data-href="https://code.visualstudio.com/Download" data-search="" title="Visual Studio Code">
+								<img src="http://www.google.com/s2/favicons?domain=https://code.visualstudio.com/Download">
+								<p>VS Code</p>
+							</a>
+							<a data-href="http://brackets.io/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=http://brackets.io/">
+								<p>brackets</p>
+							</a>
+						</ul>
+						<ul class="all">
+							<a data-href="https://www.jetbrains.com/pycharm/" data-search="https://www.jetbrains.com/search/?q="
+								title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.jetbrains.com/pycharm/">
+								<p>pycharm</p>
+							</a>
+							<a data-href="https://git-scm.com/" data-search="https://git-scm.com/search/results?search=" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://git-scm.com/">
+								<p>Git</p>
+							</a>
+							<a data-href="https://www.python.org/" data-search="https://www.python.org/search/?q=%s&submit=" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.python.org/">
+								<p>Python</p>
+							</a>
+							<a data-href="https://www.djangoproject.com/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.djangoproject.com/">
+								<p>django</p>
+							</a>
+							<a data-href="https://www.anaconda.com/download/" data-search="" title="">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.anaconda.com/download/">
+								<p>anaconda</p>
+							</a>
+						</ul>
+					</div>
+				</div>
+
+				<!-- 工具 -->
+				<div>
+					<h3><i class="iconfont">&#xe609;</i>工具</h3>
+					<div>
+						<ul class="love">
+							<a data-href="http://tool.oschina.net/" data-search="" title="在线工具 —— 开源中国社区">
+								<img src="http://www.google.com/s2/favicons?domain=oschina.net">
+								<p>在线工具</p>
+							</a>
+							<a data-href="https://www.w3cschool.cn/tutorial" data-search="https://www.w3cschool.cn/search?w="
+								title="编程入门教程_w3cschool极客教程">
+								<img src="http://www.google.com/s2/favicons?domain=https://www.w3cschool.cn/">
+								<p>编程入门教程</p>
+							</a>
+							<a data-href="http://www.lintcode.com/zh-cn/" data-search="" title="LintCode是专注代码面试的在线评测系统">
+								<img src="http://www.google.com/s2/favicons?domain=http://www.lintcode.com/">
+								<p>LintCode 面试题</p>
+							</a>
+
+						</ul>
+						<ul class="all">
+
+						</ul>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+				<!-- -->
+
+			</div>
+
+		</div>
+		<div class="footer">
+			<p><a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2023015844号</a></p>
+		</div>
+
+
+	</div>
+
+
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/so.js"></script>
+
+</html>
