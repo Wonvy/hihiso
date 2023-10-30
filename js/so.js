@@ -120,9 +120,9 @@ $(document).ready(function () {
 
 	//展开 所有项目
 	$('.love > a:nth-child(3)').mouseover(function () {
-		$(this).parents("div").addClass("on");
+		$(this).parents("section").addClass("on");
 	});
-	$('.link > div').mouseleave(function () {
+	$('.link section').mouseleave(function () {
 		$(this).removeClass("on");
 	});
 

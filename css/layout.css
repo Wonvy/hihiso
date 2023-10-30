@@ -1,0 +1,741 @@
+@charset "UTF-8";
+:root {
+  --color-tab-bk: #222;
+  --color-tab-bk-hover: #111;
+}
+
+.view_svg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: var(--color-tab-bk);
+  z-index: 81;
+  overflow-x: auto;
+  transition: background-color 0.15s ease;
+}
+.view_svg:hover {
+  background-color: var(--color-tab-bk-hover);
+}
+.view_svg ul {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 150px);
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  font-family: "Open Sans";
+  scroll-behavior: smooth;
+  justify-items: center;
+  padding: 8px;
+  overflow: auto;
+}
+.view_svg ul::-webkit-scrollbar {
+  width: 1px;
+}
+.view_svg ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+.view_svg ul::-webkit-scrollbar-thumb {
+  background: #666;
+}
+.view_svg ul::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.view_svg ul li {
+  position: relative;
+  height: 150px;
+  width: 120px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease 0s;
+  border-radius: 10px;
+}
+.view_svg ul li:hover {
+  color: rgb(255, 255, 255);
+  width: 130%;
+}
+.view_svg ul li:hover svg rect {
+  stroke-width: 2px;
+  stroke: #fff;
+}
+.view_svg ul li:hover svg path {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+.view_svg ul li.selected {
+  color: #fff;
+}
+.view_svg ul li.selected svg {
+  background: #2e454f !important;
+}
+.view_svg ul li svg {
+  width: 120px;
+  height: 77px;
+}
+.view_svg ul li svg rect {
+  stroke: #999;
+  stroke-width: 1px;
+}
+.view_svg ul li svg path {
+  stroke: #999;
+  stroke-width: 1.5px;
+}
+
+.view_img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: var(--color-tab-bk);
+  overflow-x: auto;
+  transition: background-color 0.15s ease;
+}
+.view_img:hover {
+  background-color: var(--color-tab-bk-hover);
+}
+.view_img ul {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 120px);
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  font-family: "Open Sans";
+  scroll-behavior: smooth;
+  justify-items: center;
+  padding: 8px;
+  overflow: auto;
+}
+.view_img ul::-webkit-scrollbar {
+  width: 1px;
+}
+.view_img ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+.view_img ul::-webkit-scrollbar-thumb {
+  background: #666;
+}
+.view_img ul::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.view_img ul li {
+  position: relative;
+  height: 150px;
+  width: 100px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease 0s;
+  border-radius: 10px;
+  box-sizing: border-box;
+  user-select: none;
+  -web-kit-user-select: none;
+}
+.view_img ul li.selected {
+  color: #fff;
+}
+.view_img ul li.selected img {
+  filter: brightness(100%);
+  background-color: transparent;
+  border: 2px solid #53a76d;
+}
+.view_img ul li:hover {
+  color: #fff;
+}
+.view_img ul li:hover img {
+  width: 110%;
+  filter: brightness(80%);
+}
+.view_img ul li img {
+  position: absolute;
+  width: 100%;
+  transform: translate(0px, -50%);
+  top: 50%;
+  z-index: 1;
+  filter: brightness(28%);
+  border-radius: 15px;
+  height: auto;
+  object-fit: cover;
+  background-color: rgb(109, 109, 109);
+  transition: brightness, background-color, width 0.2s ease;
+}
+.view_img ul li h4 {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 8;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  color: rgb(186, 186, 186);
+  overflow: hidden;
+}
+.view_img ul li h4 span {
+  width: 100%;
+  display: inline-block;
+  font-size: 6px;
+  font-family: serif;
+  color: #737373;
+  overflow: hidden;
+  white-space: nowrap;
+  /* 让文本不换行 */
+  text-overflow: ellipsis;
+  /* 超过部分显示省略号 */
+}
+
+.view_img2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(17, 17, 17);
+  overflow-x: auto;
+  flex-direction: column;
+}
+.view_img2 h3 {
+  color: #fff;
+  padding: 8px;
+  font-size: 18px;
+}
+.view_img2 ul {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-row-gap: 15px;
+  grid-template-columns: repeat(auto-fill, 110px);
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  font-family: "Open Sans";
+  scroll-behavior: smooth;
+  justify-items: center;
+  padding: 8px;
+}
+.view_img2 ul::-webkit-scrollbar {
+  width: 1px;
+}
+.view_img2 ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+.view_img2 ul::-webkit-scrollbar-thumb {
+  background: #666;
+}
+.view_img2 ul::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.view_img2 ul li {
+  position: relative;
+  box-sizing: border-box;
+  height: 120px;
+  width: 120px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  -web-kit-user-select: none;
+  border-radius: 10px;
+  justify-content: center;
+}
+.view_img2 ul li.selected {
+  color: #fff;
+}
+.view_img2 ul li.selected img {
+  filter: brightness(100%);
+  background-color: transparent;
+  border: 2px solid #53a76d;
+}
+.view_img2 ul li:hover {
+  color: #fff;
+}
+.view_img2 ul li:hover img {
+  width: 110%;
+  filter: brightness(80%);
+}
+.view_img2 ul li img {
+  position: absolute;
+  width: 100%;
+  transform: translate(0px, -50%);
+  top: 50%;
+  z-index: 1;
+  filter: brightness(28%);
+  border-radius: 15px;
+  height: auto;
+  object-fit: cover;
+  background-color: rgb(109, 109, 109);
+  transition: brightness, background-color, width 0.2s ease;
+}
+.view_img2 ul li h4 {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 8;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  color: rgb(186, 186, 186);
+  overflow: hidden;
+}
+.view_img2 ul li h4 span {
+  width: 100%;
+  display: inline-block;
+  font-size: 6px;
+  font-family: serif;
+  color: #737373;
+  overflow: hidden;
+  white-space: nowrap;
+  /* 让文本不换行 */
+  text-overflow: ellipsis;
+  /* 超过部分显示省略号 */
+}
+
+.view_img3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(17, 17, 17);
+  overflow-x: auto;
+  flex-direction: column;
+}
+.view_img3 h3 {
+  color: #fff;
+  padding: 8px;
+  font-size: 18px;
+}
+.view_img3 ul {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-row-gap: 15px;
+  grid-template-columns: repeat(auto-fill, 150px);
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgb(153, 153, 153);
+  font-family: "Open Sans";
+  scroll-behavior: smooth;
+  justify-items: center;
+  padding: 8px;
+}
+.view_img3 ul::-webkit-scrollbar {
+  width: 1px;
+}
+.view_img3 ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+.view_img3 ul::-webkit-scrollbar-thumb {
+  background: #666;
+}
+.view_img3 ul::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.view_img3 ul li {
+  position: relative;
+  box-sizing: border-box;
+  height: 60px;
+  width: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  -web-kit-user-select: none;
+  border-radius: 10px;
+  justify-content: center;
+  overflow: hidden;
+}
+.view_img3 ul li.selected {
+  background: rgba(39, 156, 117, 0.21);
+  border: 2px solid #53a76d;
+}
+.view_img3 ul li.selected h4 {
+  font-size: 16px;
+  color: rgb(66, 210, 162);
+}
+.view_img3 ul li.selected img {
+  filter: brightness(100%);
+  background-color: transparent;
+}
+.view_img3 ul li::-webkit-scrollbar {
+  width: 0;
+}
+.view_img3 ul li:hover {
+  color: #fff;
+}
+.view_img3 ul li:hover img {
+  width: 110%;
+  filter: brightness(80%);
+}
+.view_img3 ul li img {
+  position: absolute;
+  width: 100%;
+  transform: translate(0px, -50%);
+  top: 50%;
+  z-index: 1;
+  filter: brightness(28%);
+  border-radius: 15px;
+  height: auto;
+  object-fit: cover;
+  background-color: rgb(109, 109, 109);
+  transition: brightness, background-color, width 0.2s ease;
+}
+.view_img3 ul li h4 {
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index: 8;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  color: rgb(186, 186, 186);
+  overflow: hidden;
+}
+.view_img3 ul li h4 span {
+  width: 100%;
+  display: none;
+  font-size: 6px;
+  font-family: serif;
+  color: #737373;
+  overflow: hidden;
+  white-space: nowrap;
+  /* 让文本不换行 */
+  text-overflow: ellipsis;
+  /* 超过部分显示省略号 */
+}
+
+a {
+  text-decoration: none;
+  color: #ccc;
+  cursor: pointer;
+}
+a:visited {
+  color: #ccc;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  font: 12px "微软雅黑", Arial;
+  color: #abb2bf;
+  position: relative;
+  background: #21252b;
+}
+
+.Theme {
+  position: absolute;
+  display: none;
+}
+
+#wrapper {
+  display: flex;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+#wrapper .search-wrap {
+  position: relative;
+  width: 100%;
+  height: 25%;
+  margin: 0 auto;
+}
+#wrapper .search-wrap .search {
+  position: relative;
+  width: 340px;
+  height: 50px;
+  border-radius: 25px;
+  line-height: 50px;
+  background-color: #2c313a;
+  padding-left: 20px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+#wrapper .search-wrap .search input {
+  position: relative;
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  background: transparent;
+  height: 50px;
+  border: 0;
+  width: 100%;
+  outline-style: none;
+}
+#wrapper .search-wrap .search > a {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+#wrapper .search-wrap .search > a:hover {
+  background-color: #fff;
+  opacity: 1;
+}
+#wrapper .search-wrap .search > a img {
+  padding: 7px;
+  width: 16px;
+  height: 16px;
+  transition: all 0.2s ease-in-out;
+}
+#wrapper .search-wrap .search > a p {
+  display: none;
+}
+#wrapper .search-wrap .search ul.history {
+  visibility: visible;
+}
+#wrapper .search-wrap .search ul.history a {
+  float: left;
+  margin-right: 10px;
+  opacity: 0.8;
+  position: relative;
+  top: 10px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+#wrapper .search-wrap .search ul.history a:hover {
+  background-color: #fff;
+  opacity: 1;
+}
+#wrapper .search-wrap .search ul.history a img {
+  padding: 7px;
+  width: 16px;
+  height: 16px;
+  transition: all 0.2s ease-in-out;
+}
+#wrapper .search-wrap .search ul.history a p {
+  display: none;
+}
+
+main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  column-gap: 50px;
+  height: 75%;
+  overflow: hidden;
+  flex-direction: row;
+}
+main .left {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+main .left .information {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #21252b;
+  z-index: 33;
+}
+main .left .information ul {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  width: 100%;
+}
+main .left .information ul li {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+main .left .information ul li h3 {
+  font-size: 14px;
+}
+main .left .information ul li img {
+  width: 100%;
+  border-radius: 8px;
+}
+main .left .introduction {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: #21252b;
+}
+main .left h3 {
+  font-size: 30px;
+}
+main .left img {
+  width: 300px;
+  border-radius: 6px;
+  background-color: #111;
+}
+main .right {
+  display: flex;
+  width: 70%;
+  row-gap: 30px;
+  flex-direction: column;
+}
+main .right .recently {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  background: transparent;
+  border-radius: 5px;
+  padding: 10px 15px 10px 15px;
+  transition: background 0.3s ease;
+}
+main .right .recently:hover {
+  background: #272c33;
+}
+main .right .recently h2 {
+  display: flex;
+  height: 30px;
+  font-size: 15px;
+}
+main .right .recently ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 90%;
+}
+main .right .recently ul li {
+  height: 30px;
+}
+main .right .recently ul li a {
+  display: flex;
+  column-gap: 8px;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+main .right .recently ul li a img {
+  width: 16px;
+  height: 16px;
+}
+main .right .link {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  width: 100%;
+  position: relative;
+  height: 70%;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+main .right .link section {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  transition: all 0.2s ease-in-out;
+}
+main .right .link section.on {
+  background-color: #2c313a;
+}
+main .right .link section.on div {
+  z-index: 99;
+  background-color: #2c313a;
+}
+main .right .link section h3 {
+  position: relative;
+  left: 18px;
+  font-size: 16px;
+  color: #56b6c2;
+  line-height: 40px;
+}
+main .right .link section div {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+main .right .link section div ul.love {
+  width: 100%;
+}
+main .right .link section div ul.love a {
+  position: relative;
+  left: 10px;
+  display: block;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+}
+main .right .link section div ul.love a:hover {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+main .right .link section div ul.love a:hover img {
+  color: #ccc;
+  opacity: 1;
+}
+main .right .link section div ul.love a img {
+  padding: 7px 7px 7px 10px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.85;
+}
+main .right .link section div ul.love a p {
+  position: absolute;
+  top: 0;
+  left: 34px;
+  line-height: 30px;
+}
+main .right .link section div ul.all {
+  transition: all 0.1s ease-in-out;
+  padding-bottom: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  border-radius: 10px;
+  opacity: 0;
+}
+
+.footer {
+  text-align: center;
+}
+
+/*# sourceMappingURL=layout.css.map */
