@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": "falkjflaj",
+      "name": "设计",
+      "description": "花瓣网",
+    }
+  ],
+}
+],
+"website": [
+{
+  "title": "http://huaban.com/",
+  "pubDate": "2023-10-30 20:26:05",
+  "link": "花瓣网",
+  "guid": "favicon/www.qiuziti.com.ico",
+  "author": "小顽",
+  "thumbnail": "",
+  "description": "花瓣网",
+  "content": "网站内容",
+  "enclosure": {
+    "thumbnail": ""
+  },
+  "categories": [
+    "设计"
+  ]
+}
+]
+}

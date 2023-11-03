@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+	<meta charset="utf-8">
+	<title>hihiso</title>
+	<meta name=“renderer” content=“webkit”>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="Keywords" content="" />
+	<meta name="Description" content="" />
+	<link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="https://at.alicdn.com/t/c/font_62871_1r1010x2g14.css" />
+	<link id="theme" rel="stylesheet" href="./css/layout.css" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+
+</head>
+
+<body>
+	<!--主题-->
+	<div data-tips="全屏预览">
+		<div class="content">
+			内容遮罩
+		</div>
+	</div>
+
+	<div class="Theme">
+		<ul>
+			<li data-theme="theme1">
+				<p>黑色1</p>
+			</li>
+			<li data-theme="theme2">
+				<p>黑色2</p>
+			</li>
+			<li data-theme="theme3">
+				<p>白色1</p>
+			</li>
+			<li data-theme="theme4">
+				<p>白色2</p>
+			</li>
+			<li data-theme="theme5">
+				<p>白色3</p>
+			</li>
+		</ul>
+	</div>
+
+	<div id="wrapper">
+		<!--搜索-->
+		<div class="search-wrap">
+			<div class="search">
+
+				<input type="text" name="lname" />
+
+				<a data-href="http://www.google.com/" data-search="http://www.google.com/search?q=%s">
+					<img src="favicon/google.com.ico">
+					<p>google</p>
+				</a>
+
+
+				<ul class="history link">
+
+					<li>
+						<a data-href="http://www.google.com/" data-search="http://www.google.com/search?q=%s">
+							<img src="favicon/google.com.ico">
+							<p>google</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="http://cn.bing.com/" data-search="http://cn.bing.com/search?q=%s">
+							<img src="https://www.bing.com/favicon.ico">
+							<p>必应搜索</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="https://www.douyin.com/" data-search="https://www.douyin.com/search/%s">
+							<img title="抖音" src="https://lf1-cdn-tos.bytegoofy.com/goofy/ies/douyin_web/public/favicon.ico">
+							<p>抖音</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="https://www.xiaohongshu.com/"
+							data-search="https://www.xiaohongshu.com/search_result?keyword=%s">
+							<img title="小红书" src="https://www.xiaohongshu.com/favicon.ico" />
+							<p>小红书</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="http://www.baidu.com/" data-search="https://www.zhihu.com/search?type=question&q=%s"
+							title="这个标签一看就知道是做循环用的了，用法如下：">
+							<img src="favicon/zhihu.com.ico">
+							<p>知乎</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="http://weixin.sogou.com/"
+							data-search="http://weixin.sogou.com/weixin?type=2&query=%s&ie=utf8">
+							<img src="favicon/sogou.com.ico">
+							<p>微信</p>
+						</a>
+					</li>
+
+					<li>
+						<a data-href="http://weibo.com/" data-search="http://s.weibo.com/weibo/%s">
+							<img src="favicon/weibo.com.ico">
+							<p>微博</p>
+						</a>
+					</li>
+
+					<a data-href="http://huaban.com/" data-search="http://huaban.com/search/?q=%s">
+						<img src="favicon/huaban.com.ico">
+						<p>花瓣网</p>
+					</a>
+
+
+				</ul>
+
+			</div>
+		</div>
+
+		<!--收藏夹-->
+		<main class="bootmarks">
+			<div class="left">
+				<div class="information">
+					<div class="header">
+						<div class="title">
+							<img src="/favicon/zcool.ico" alt="">
+							<h2>站酷</h2>
+							<p>日期</p>
+						</div>
+						<div class="view">
+							<ul>
+								<li>1</li>
+								<li>2</li>
+								<li>13</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="list">
+						<ul>
+							<li>
+								<div class="thumb">
+									<img src="https://img.zcool.cn/community/031caumt0gkjdx2akc998c83535.jpeg" alt="">
+								</div>
+								<div class="detail">
+									<h3>【AI瞭望】科大讯飞联合华为打造算</h3>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="introduction">
+					<img src="" alt="">
+					<h3>11</h3>
+					<p>222</p>
+				</div>
+			</div>
+			<div class="right">
+				<div class="recently">
+					<h2>最近访问</h2>
+					<ul>
+						<li>
+							<a data-href="http://book.dangdang.com/"
+								data-search="http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s">
+								<img src="favicon/amazon.cn.ico">
+								<p>亚马逊图书</p>
+							</a>
+						</li>
+						<li>
+							<a data-href="http://book.dangdang.com/"
+								data-search="http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s">
+								<img src="favicon/amazon.cn.ico">
+								<p>亚马逊图书</p>
+							</a>
+						</li>
+						<li>
+							<a data-href="http://book.dangdang.com/"
+								data-search="http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s">
+								<img src="favicon/amazon.cn.ico">
+								<p>亚马逊图书</p>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+
+				<div class="link">
+
+					<section>
+						<h3><i class="iconfont">&#xe600;</i>设计</h3>
+						<div>
+							<ul class="love">
+
+								<a data-href="http://www.zcool.com.cn/" data-search="http://www.zcool.com.cn/tosearch.do?world=">
+									<img src="favicon/www.zcool.com.cn.ico">
+									<p>站酷网</p>
+								</a>
+
+								<a data-href="http://huaban.com/" data-search="http://huaban.com/search/?q=">
+									<img src="favicon/huaban.com.ico">
+									<p>花瓣网</p>
+								</a>
+
+								<a data-href="http://dribbble.com/" data-search="http://dribbble.com/search?q=">
+									<img src="favicon/dribbble.com.ico">
+									<p>dribbble</p>
+								</a>
+							</ul>
+							<ul class="all">
+								<a data-href="http://www.pinterest.com" data-search="http://www.pinterest.com/search/pins/?q=">
+									<img src="favicon/www.pinterest.com.ico">
+									<p>pinterest</p>
+								</a>
+
+								<a data-href="http://www.behance.net/" data-search="http://www.behance.net/search?search=">
+									<img src="favicon/www.behance.net.ico">
+									<p>behance</p>
+								</a>
+
+								<a data-href="http://www.ui.cn/" data-search="http://s.ui.cn/search.html?keywords=">
+									<img src="favicon/www.ui.cn.ico">
+									<p>UI中国</p>
+								</a>
+
+
+								<a data-href="http://www.deviantart.com/" data-search="http://www.deviantart.com/browse/all/?q=">
+									<img src="favicon/www.deviantart.com.ico">
+									<p>deviantart</p>
+								</a>
+
+								<a data-href="http://www.uisdc.com/" data-search="http://www.uisdc.com/?s=">
+									<img src="favicon/www.uisdc.com.ico">
+									<p>优秀网页设计</p>
+								</a>
+
+							</ul>
+						</div>
+					</section>
+
+
+					<section>
+						<h3><i class="iconfont">&#xe610;</i>图书</h3>
+						<div>
+							<ul class="love">
+								<a data-href="http://book.dangdang.com/"
+									data-search="http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s">
+									<img src="favicon/amazon.cn.ico">
+									<p>亚马逊图书</p>
+								</a>
+
+								<a data-href="http://www.amazon.cn/" data-search="http://search.dangdang.com/?key=%s">
+									<img src="favicon/dangdang.com.ico">
+									<p>当当图书</p>
+								</a>
+
+								<a data-href="http://book.douban.com/"
+									data-search="http://book.douban.com/subject_search?search_text=%s">
+									<img src="favicon/douban.com.ico">
+									<p>豆瓣图书</p>
+								</a>
+							</ul>
+							<ul class="all">
+
+								<a data-href="https://books.google.com.hk/" data-search="https://www.google.com/search?tbm=bks&q=%s">
+									<img src="favicon/google.com.ico">
+									<p>谷歌图书</p>
+
+								</a>
+
+								<a data-href="http://book.jd.com/" data-search="http://search.jd.com/Search?keyword=%s=utf-8">
+									<img src="favicon/jd.com.ico">
+									<p>京东图书</p>
+								</a>
+
+								<a data-href="https://www.taobao.com/" data-search="https://s.taobao.com/search?q=%s+%E4%B9%A6">
+									<img src="favicon/taobao.com.ico">
+									<p>淘宝图书</p>
+								</a>
+
+
+								<a data-href="http://www.baidu.com/" data-search="http://www.baidu.com/s?wd=%s%20pdf">
+									<img src="favicon/baidu.com.ico">
+									<p>百度PDF</p>
+								</a>
+
+								<a data-href="http://www.91tuku.com/category.php?id=2" data-search="">
+									<img src="favicon/91tuku.com.ico">
+									<p>91图书</p>
+								</a>
+
+
+
+							</ul>
+						</div>
+
+					</section>
+
+
+
+
+					<section>
+						<h3><i class="iconfont">&#xe61c;</i>摄影</h3>
+						<div>
+							<ul class="love">
+
+								<a data-href="http://1x.com/" data-search="">
+									<img src="favicon/1x.com.ico">
+									<p>1x</p>
+								</a>
+
+								<a data-href="https://500px.com/" data-search="">
+									<img src="favicon/500px.com.ico">
+									<p>500px</p>
+								</a>
+
+								<a data-href="http://tuchong.com/" data-search="http://tuchong.com/tags/">
+									<img src="favicon/tuchong.com.ico">
+									<p>图虫网</p>
+								</a>
+
+
+
+
+							</ul>
+
+							<ul class="all">
+
+								<a data-href="http://www.moko.cc/" data-search="">
+									<img src="favicon/www.moko.cc.ico">
+									<p>美空</p>
+								</a>
+
+								<a data-href="http://xthui.com/" data-search="http://xthui.com/search/">
+									<img src="favicon/xthui.com.ico">
+									<p>修图汇</p>
+								</a>
+							</ul>
+						</div>
+
+					</section>
+
+
+					<section>
+						<h3><i class="iconfont">&#xe61a;</i>听音乐</h3>
+						<div>
+							<ul class="love">
+
+								<a data-href="http://www.yinyuetai.com/" data-search="http://so.yinyuetai.com/mv?keyword=">
+									<img src="favicon/www.quanjing.com.ico">
+									<p>音悦Tai</p>
+								</a>
+
+								<a data-href="http://www.xiami.com/" data-search="http://www.xiami.com/search?key=">
+									<img src="favicon/xiami.net.ico">
+									<p>虾米</p>
+								</a>
+
+								<a data-href="http://douban.fm/" data-search="http://music.douban.com/subject_search?search_text=">
+									<img src="favicon/douban.fm.ico">
+									<p>豆瓣FM</p>
+								</a>
+
+							</ul>
+							<ul class="all">
+
+
+
+							</ul>
+						</div>
+
+					</section>
+
+
+
+					<!--  求知  -->
+					<section>
+						<h3>求知</h3>
+						<div>
+							<ul class="love">
+
+								<a data-href="http://www.zhihu.com/" data-search="http://www.zhihu.com/search?q=">
+									<img src="favicon/www.zhihu.com.ico">
+									<p>知乎</p>
+								</a>
+
+								<a data-href="http://www.jianshu.com/" data-search="http://www.jianshu.com/search?q=">
+									<img src="favicon/www.jianshu.com.ico">
+									<p>简书</p>
+								</a>
+
+								<a data-href="http://www.v2ex.com/" data-search="https://www.google.com/search?q=site%3Av2ex.com%2Ft+">
+									<img src="favicon/www.v2ex.com.ico">
+									<p>v2ex</p>
+								</a>
+
+
+
+							</ul>
+							<ul class="all">
+								<a data-href="http://baike.baidu.com/" data-search="http://baike.baidu.com/search/none?word=">
+									<img src="favicon/baike.baidu.com.ico">
+									<p>百度百科</p>
+								</a>
+
+							</ul>
+						</div>
+
+					</section>
+				</div>
+			</div>
+
+
+
+
+		</main>
+
+		<!--备案-->
+		<div class="footer">
+			<p><a title="备案" href="https://beian.miit.gov.cn/" target="_blank">闽ICP备2023015844号</a></p>
+		</div>
+
+	</div>
+
+</body>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/so.js"></script>
+<script src="/js/rss-parser.min.js"></script>
+<script type="module" src="main.js"></script>
+
+</html>
