@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "creator": "话唠咖啡匠",
+      "title": "如何利用家电科技打造「智慧卧室」，轻松解锁优质睡眠？",
+      "link": "http://www.zhihu.com/question/622756019/answer/3246588288?utm_campaign=rss&utm_medium=rss&utm_source=rss&utm_content=title",
+      "pubDate": "Thu, 12 Oct 2023 15:17:20 +0800",
+      "dc:creator": "话唠咖啡匠",
+      "content": "",
+      "contentSnippet": "先泼个冷水～\n“智能化”如今已经成为一个越来越被追捧的概念。",
+      "guid": "http://www.zhihu.com/question/622756019/answer/3246588288",
+      "isoDate": "2023-10-12T07:17:20.000Z"
+    },
+    {
+      "creator": "话唠咖啡匠",
+      "title": "好的床垫是否真的可以改善睡眠质量？",
+      "link": "http://www.zhihu.com/question/622755882/answer/3244710657?utm_campaign=rss&utm_medium=rss&utm_source=rss&utm_content=title",
+      "pubDate": "Wed, 11 Oct 2023 11:00:11 +0800",
+      "dc:creator": "话唠咖啡匠",
+      "content": "",
+      "contentSnippet": "",
+      "guid": "http://www.zhihu.com/question/622755882/answer/3244710657",
+      "isoDate": "2023-10-11T03:00:11.000Z"
+    }
+  ],
+  "feedUrl": "http://www.zhihu.com/rss",
+  "paginationLinks": {
+    "self": "http://www.zhihu.com/rss"
+  },
+  "title": "知乎每日精选",
+  "description": "中文互联网最大的知识平台，帮助人们便捷地分享彼此的知识、经验和见解。",
+  "link": "http://www.zhihu.com",
+  "language": "zh-cn",
+  "copyright": "© 2023 知乎(http://www.zhihu.com)",
+  "lastBuildDate": "Wed, 01 Nov 2023 12:45:58 +0800",
+  "ttl": "180"
+}

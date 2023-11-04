@@ -1,5 +1,40 @@
 [
   {
+    "category": "RSS",
+    "websites": [
+      {
+        "url": "https://www.zhihu.com/",
+        "searchUrl": "https://www.zhihu.com/rss",
+        "iconUrl": "https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.81060cab.png",
+        "name": "知乎"
+      },
+      {
+        "url": "https://sspai.com/",
+        "searchUrl": "https://sspai.com/feed",
+        "iconUrl": "https://cdn-static.sspai.com/favicon/sspai.ico",
+        "name": "少数派"
+      },
+      {
+        "url": "https://v2ex.com",
+        "searchUrl": "https://v2ex.com/index.xml",
+        "iconUrl": "https://v2ex.com/static/favicon.ico",
+        "name": "v2ex"
+      },
+      {
+        "url": "https://www.appinn.com/",
+        "searchUrl": "https://feeds.appinn.com/appinns/",
+        "iconUrl": "https://static1.appinn.com/stwww/wp-content/uploads/Appinn-icon-152.jpg",
+        "name": "小众软件"
+      },
+      {
+        "url": "https://www.geekpark.net/",
+        "searchUrl": "https://www.geekpark.net/rss",
+        "iconUrl": "https://imgslim.geekpark.net/geekpark-icon-196-black.png",
+        "name": "极客公园"
+      }
+    ]
+  },
+  {
     "category": "设计",
     "websites": [
       {
@@ -133,7 +168,7 @@
       {
         "url": "https://www.maoken.com/",
         "searchUrl": "https://www.maoken.com/?s={s}",
-        "iconUrl": "favicon/www.zhihu.com.ico",
+        "iconUrl": "https://www.maoken.com/favicon.ico",
         "name": "猫啃网"
       },
       {
@@ -157,473 +192,100 @@
     ]
   },
   {
-    "category": "设计",
+    "category": "素材",
     "websites": [
       {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
+        "url": "https://www.iconfont.cn/",
+        "searchUrl": "https://www.iconfont.cn/search/index?searchType=icon&q={s}",
+        "iconUrl": "https://img.alicdn.com/imgextra/i4/O1CN01XZe8pH1USpiUNT1QN_!!6000000002517-2-tps-114-114.png",
+        "name": "iconfont"
       },
       {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
+        "url": "https://www.freepik.com/",
+        "searchUrl": "https://www.freepik.com/search?format=search&query={s}",
+        "iconUrl": "https://fps.cdnpk.net/favicons/apple-icon-57x57.png",
+        "name": "freepik"
       },
       {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
+        "url": "https://unsplash.com/",
+        "searchUrl": "https://unsplash.com/s/photos/{s}",
+        "iconUrl": "https://unsplash.com/apple-touch-icon.png",
+        "name": "unsplash"
       },
       {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      },
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
+        "url": "https://pixabay.com/",
+        "searchUrl": "https://pixabay.com/images/search/{s}",
+        "iconUrl": "https://pixabay.com/apple-touch-icon.png",
+        "name": "pixabay"
       }
     ]
   },
   {
-    "category": "图书",
+    "category": "酷站",
     "websites": [
       {
-        "url": "http://book.dangdang.com/",
-        "searchUrl": "http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s",
-        "iconUrl": "favicon/amazon.cn.ico",
-        "name": "亚马逊图书"
-      },
-      {
-        "url": "http://www.amazon.cn/",
-        "searchUrl": "http://search.dangdang.com/?key=%s",
-        "iconUrl": "favicon/dangdang.com.ico",
-        "name": "当当图书"
-      },
-      {
-        "url": "http://book.douban.com/",
-        "searchUrl": "http://book.douban.com/subject_search?search_text=%s",
-        "iconUrl": "favicon/douban.com.ico",
-        "name": "豆瓣图书"
+        "url": "https://www.awwwards.com/",
+        "searchUrl": "https://www.awwwards.com/inspiration_search/?text={s}",
+        "iconUrl": "https://www.awwwards.com/apple-touch-icon.png",
+        "name": "awwwards"
       }
     ]
   },
   {
-    "category": "摄影",
+    "category": "前端",
     "websites": [
       {
-        "url": "http://1x.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/1x.com.ico",
-        "name": "1x"
+        "url": "https://codepen.io/",
+        "searchUrl": "https://codepen.io/search/pens?q={s}",
+        "iconUrl": "https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico",
+        "name": "代码笔"
       },
       {
-        "url": "https://500px.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/500px.com.ico",
-        "name": "500px"
+        "url": "https://www.csdn.net/",
+        "searchUrl": "https://so.csdn.net/so/search?spm=1000.2115.3001.4498&q={s}&t=&u=",
+        "iconUrl": "https://g.csdnimg.cn/static/logo/favicon32.ico",
+        "name": "csdn"
       },
       {
-        "url": "http://tuchong.com/",
-        "searchUrl": "http://tuchong.com/tags/",
-        "iconUrl": "favicon/tuchong.com.ico",
-        "name": "图虫网"
+        "url": "https://www.bootcss.com/",
+        "searchUrl": "https://www.bootcss.com/",
+        "iconUrl": "https://www.bootcss.com/assets/favicons/favicon.ico",
+        "name": "bootcss"
+      },
+      {
+        "url": "http://ref.ecdata.cn/index.html",
+        "searchUrl": "http://ref.ecdata.cn/index.html",
+        "iconUrl": "data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%221em%22%20width%3D%221em%22%3E%20%3Cpath%20d%3D%22m21.66%2010.44-.98%204.18c-.84%203.61-2.5%205.07-5.62%204.77-.5-.04-1.04-.13-1.62-.27l-1.68-.4c-4.17-.99-5.46-3.05-4.48-7.23l.98-4.19c.2-.85.44-1.59.74-2.2%201.17-2.42%203.16-3.07%206.5-2.28l1.67.39c4.19.98%205.47%203.05%204.49%207.23Z%22%20fill%3D%22%23c9d1d9%22%2F%3E%20%3Cpath%20d%3D%22M15.06%2019.39c-.62.42-1.4.77-2.35%201.08l-1.58.52c-3.97%201.28-6.06.21-7.35-3.76L2.5%2013.28c-1.28-3.97-.22-6.07%203.75-7.35l1.58-.52c.41-.13.8-.24%201.17-.31-.3.61-.54%201.35-.74%202.2l-.98%204.19c-.98%204.18.31%206.24%204.48%207.23l1.68.4c.58.14%201.12.23%201.62.27Zm2.43-8.88c-.06%200-.12-.01-.19-.02l-4.85-1.23a.75.75%200%200%201%20.37-1.45l4.85%201.23a.748.748%200%200%201-.18%201.47Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3Cpath%20d%3D%22M14.56%2013.89c-.06%200-.12-.01-.19-.02l-2.91-.74a.75.75%200%200%201%20.37-1.45l2.91.74c.4.1.64.51.54.91-.08.34-.38.56-.72.56Z%22%20fill%3D%22%23228e6c%22%20%2F%3E%20%3C%2Fsvg%3E",
+        "name": "速查表"
+      },
+      {
+        "url": "https: //zh.javascript.info/",
+        "searchUrl": "https://zh.javascript.info/search?query={s}",
+        "iconUrl": "https://zh.javascript.info/img/favicon/apple-touch-icon-precomposed.png",
+        "name": "现代 JavaScript 教程"
       }
     ]
   },
   {
-    "category": "听音乐",
+    "category": "学习",
     "websites": [
       {
-        "url": "http://www.yinyuetai.com/",
-        "searchUrl": "http://so.yinyuetai.com/mv?keyword=",
-        "iconUrl": "favicon/www.quanjing.com.ico",
-        "name": "音悦Tai"
+        "url": "https://mubu.com/app",
+        "searchUrl": "https://mubu.com/app",
+        "iconUrl": "https://mubu-assets.tos-cn-shanghai.volces.com/favicon.ico",
+        "name": "幕布"
       },
       {
-        "url": "http://www.xiami.com/",
-        "searchUrl": "http://www.xiami.com/search?key=",
-        "iconUrl": "favicon/xiami.net.ico",
-        "name": "虾米"
+        "url": "https://www.yuque.com/",
+        "searchUrl": "https://www.yuque.com/search?q={s}&type=content&scope=%2F&tab=public&p=1&sence=searchPage",
+        "iconUrl": "https://mdn.alipayobjects.com/huamei_0prmtq/afts/img/A*sRUdR543RjcAAAAAAAAAAAAADvuFAQ/original",
+        "name": "语雀"
       },
       {
-        "url": "http://douban.fm/",
-        "searchUrl": "http://music.douban.com/subject_search?search_text=",
-        "iconUrl": "favicon/douban.fm.ico",
-        "name": "豆瓣FM"
-      }
-    ]
-  },
-  {
-    "category": "求知",
-    "websites": [
-      {
-        "url": "http://www.zhihu.com/",
-        "searchUrl": "http://www.zhihu.com/search?q=",
-        "iconUrl": "favicon/www.zhihu.com.ico",
-        "name": "知乎"
-      },
-      {
-        "url": "http://www.jianshu.com/",
-        "searchUrl": "http://www.jianshu.com/search?q=",
-        "iconUrl": "favicon/www.jianshu.com.ico",
-        "name": "简书"
-      },
-      {
-        "url": "http://www.v2ex.com/",
-        "searchUrl": "https://www.google.com/search?q=site%3Av2ex.com%2Ft+",
-        "iconUrl": "favicon/www.v2ex.com.ico",
-        "name": "v2ex"
-      },
-      {
-        "url": "http://baike.baidu.com/",
-        "searchUrl": "http://baike.baidu.com/search/none?word=",
-        "iconUrl": "favicon/baike.baidu.com.ico",
-        "name": "百度百科"
-      }
-    ]
-  },
-  {
-    "category": "设计",
-    "websites": [
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      },
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      },
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      }
-    ]
-  },
-  {
-    "category": "图书",
-    "websites": [
-      {
-        "url": "http://book.dangdang.com/",
-        "searchUrl": "http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s",
-        "iconUrl": "favicon/amazon.cn.ico",
-        "name": "亚马逊图书"
-      },
-      {
-        "url": "http://www.amazon.cn/",
-        "searchUrl": "http://search.dangdang.com/?key=%s",
-        "iconUrl": "favicon/dangdang.com.ico",
-        "name": "当当图书"
-      },
-      {
-        "url": "http://book.douban.com/",
-        "searchUrl": "http://book.douban.com/subject_search?search_text=%s",
-        "iconUrl": "favicon/douban.com.ico",
-        "name": "豆瓣图书"
-      }
-    ]
-  },
-  {
-    "category": "摄影",
-    "websites": [
-      {
-        "url": "http://1x.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/1x.com.ico",
-        "name": "1x"
-      },
-      {
-        "url": "https://500px.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/500px.com.ico",
-        "name": "500px"
-      },
-      {
-        "url": "http://tuchong.com/",
-        "searchUrl": "http://tuchong.com/tags/",
-        "iconUrl": "favicon/tuchong.com.ico",
-        "name": "图虫网"
-      }
-    ]
-  },
-  {
-    "category": "听音乐",
-    "websites": [
-      {
-        "url": "http://www.yinyuetai.com/",
-        "searchUrl": "http://so.yinyuetai.com/mv?keyword=",
-        "iconUrl": "favicon/www.quanjing.com.ico",
-        "name": "音悦Tai"
-      },
-      {
-        "url": "http://www.xiami.com/",
-        "searchUrl": "http://www.xiami.com/search?key=",
-        "iconUrl": "favicon/xiami.net.ico",
-        "name": "虾米"
-      },
-      {
-        "url": "http://douban.fm/",
-        "searchUrl": "http://music.douban.com/subject_search?search_text=",
-        "iconUrl": "favicon/douban.fm.ico",
-        "name": "豆瓣FM"
-      }
-    ]
-  },
-  {
-    "category": "求知",
-    "websites": [
-      {
-        "url": "http://www.zhihu.com/",
-        "searchUrl": "http://www.zhihu.com/search?q=",
-        "iconUrl": "favicon/www.zhihu.com.ico",
-        "name": "知乎"
-      },
-      {
-        "url": "http://www.jianshu.com/",
-        "searchUrl": "http://www.jianshu.com/search?q=",
-        "iconUrl": "favicon/www.jianshu.com.ico",
-        "name": "简书"
-      },
-      {
-        "url": "http://www.v2ex.com/",
-        "searchUrl": "https://www.google.com/search?q=site%3Av2ex.com%2Ft+",
-        "iconUrl": "favicon/www.v2ex.com.ico",
-        "name": "v2ex"
-      },
-      {
-        "url": "http://baike.baidu.com/",
-        "searchUrl": "http://baike.baidu.com/search/none?word=",
-        "iconUrl": "favicon/baike.baidu.com.ico",
-        "name": "百度百科"
-      }
-    ]
-  },
-  {
-    "category": "设计",
-    "websites": [
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      },
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      },
-      {
-        "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
-        "iconUrl": "favicon/www.zcool.com.cn.ico",
-        "name": "站酷网"
-      },
-      {
-        "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
-        "iconUrl": "favicon/huaban.com.ico",
-        "name": "花瓣网"
-      },
-      {
-        "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
-        "iconUrl": "favicon/dribbble.com.ico",
-        "name": "dribbble"
-      }
-    ]
-  },
-  {
-    "category": "图书",
-    "websites": [
-      {
-        "url": "http://book.dangdang.com/",
-        "searchUrl": "http://www.amazon.cn/s/&url=search-alias%3Dstripbooks&field-keywords=%s",
-        "iconUrl": "favicon/amazon.cn.ico",
-        "name": "亚马逊图书"
-      },
-      {
-        "url": "http://www.amazon.cn/",
-        "searchUrl": "http://search.dangdang.com/?key=%s",
-        "iconUrl": "favicon/dangdang.com.ico",
-        "name": "当当图书"
-      },
-      {
-        "url": "http://book.douban.com/",
-        "searchUrl": "http://book.douban.com/subject_search?search_text=%s",
-        "iconUrl": "favicon/douban.com.ico",
-        "name": "豆瓣图书"
-      }
-    ]
-  },
-  {
-    "category": "摄影",
-    "websites": [
-      {
-        "url": "http://1x.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/1x.com.ico",
-        "name": "1x"
-      },
-      {
-        "url": "https://500px.com/",
-        "searchUrl": "",
-        "iconUrl": "favicon/500px.com.ico",
-        "name": "500px"
-      },
-      {
-        "url": "http://tuchong.com/",
-        "searchUrl": "http://tuchong.com/tags/",
-        "iconUrl": "favicon/tuchong.com.ico",
-        "name": "图虫网"
-      }
-    ]
-  },
-  {
-    "category": "听音乐",
-    "websites": [
-      {
-        "url": "http://www.yinyuetai.com/",
-        "searchUrl": "http://so.yinyuetai.com/mv?keyword=",
-        "iconUrl": "favicon/www.quanjing.com.ico",
-        "name": "音悦Tai"
-      },
-      {
-        "url": "http://www.xiami.com/",
-        "searchUrl": "http://www.xiami.com/search?key=",
-        "iconUrl": "favicon/xiami.net.ico",
-        "name": "虾米"
-      },
-      {
-        "url": "http://douban.fm/",
-        "searchUrl": "http://music.douban.com/subject_search?search_text=",
-        "iconUrl": "favicon/douban.fm.ico",
-        "name": "豆瓣FM"
-      }
-    ]
-  },
-  {
-    "category": "求知",
-    "websites": [
-      {
-        "url": "http://www.zhihu.com/",
-        "searchUrl": "http://www.zhihu.com/search?q=",
-        "iconUrl": "favicon/www.zhihu.com.ico",
-        "name": "知乎"
-      },
-      {
-        "url": "http://www.jianshu.com/",
-        "searchUrl": "http://www.jianshu.com/search?q=",
-        "iconUrl": "favicon/www.jianshu.com.ico",
-        "name": "简书"
-      },
-      {
-        "url": "http://www.v2ex.com/",
-        "searchUrl": "https://www.google.com/search?q=site%3Av2ex.com%2Ft+",
-        "iconUrl": "favicon/www.v2ex.com.ico",
-        "name": "v2ex"
-      },
-      {
-        "url": "http://baike.baidu.com/",
-        "searchUrl": "http://baike.baidu.com/search/none?word=",
-        "iconUrl": "favicon/baike.baidu.com.ico",
-        "name": "百度百科"
+        "url": "https://chat.openai.com/",
+        "searchUrl": "https://chat.openai.com/",
+        "iconUrl": "https://cdn.oaistatic.com/_next/static/media/apple-touch-icon.59f2e898.png",
+        "name": "ChatGPT"
       }
     ]
   }

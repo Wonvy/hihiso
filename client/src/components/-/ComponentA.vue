@@ -1,14 +1,27 @@
+<!-- <template>
+  <div class="news-list">
+    <h2>{{ newsData.title }}</h2>
+    <ul>
+      <li v-for="(item, index) in newsData" :key="index">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.contentSnippet }}</p>
+        <p>作者: {{ item.creator }}</p>
+        <p>发布时间: {{ item.isoDate }}</p>
+        <a :href="item.link" target="_blank">阅读全文</a>
+      </li>
+    </ul>
+  </div>
+</template> -->
+
 <template>
   <div class="zcool">
     <div class="header">
       <!-- <button @click="fetchData('/json/zcool.json')">Fetch Data</button> -->
-      <div class="title" :data-url="newsData.link">
+      <div class="title" data-url="www.zcool.comn.cn">
         <img
           src="https://s3-alpha-sig.figma.com/img/5465/6d96/aa64daa56987c335ad15ca17f3304a3c?Expires=1699833600&Signature=htceRnZ7Ku1JHFIRbm6iPWtUMvFRHz4BLXabPplOAq5~naTFruP9K6uSkuCMsVrO4eWp3Qlfgr8tKO5JFe5zz6zlbOfjSwrI0Fmu-T1iLnMob96x81BPtCQFGVs~pR5YBgWAtpCuMUf9CYEI8oY750MrQ3SABklvJ2arZaeLkgvbrqZHojBugdsH86prb7bO-4AHZh2M0W3~O4GsNFSCMpjekwhlXHkbZHmVJ2OyYf0x~GFRPQSF9H3CYKubBUbO1tn-u-cCHz32e1tkTw77khdeoqgOL~hmUIqRWqquv5jS~JxYkpSRK5lnpzX74iPgLBaYBf9pEwPBOAYRNTW9gQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
           alt="">
-        <a :href="newsData.link" target="_blank">
-          <h2>{{ newsData.title }}</h2>
-        </a>
+        <h2>>{{ newsData.title }}</h2>
 
       </div>
       <div class="view">
@@ -29,27 +42,25 @@
 
     </div>
     <div class="list-wrap">
-      <ul @wheel="handleScroll">
-        <li v-for="(item, index) in newsData.items" :key="index" :data-url="item.link" @click="handleItemClick(item)">
-          <i>{{ formatDateTime(item.pubDate) }}</i>
-          <a :href=item.link target="_blank">
-            <div class="img-wrap">
-              <img :src="item.img" alt="Image" />
-            </div>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.contentSnippet }}</p>
-          </a>
+      <ul>
+        <li v-for="(item, index) in newsData.items" :key="index" :data-url="item.href">
+          <div class="img-wrap">
+            <img :src="item.img" alt="Image" />
+          </div>
+
+          <h3>{{ item.title }}</h3>
+
         </li>
       </ul>
     </div>
 
     <div class="footer">
-      <div class="prev" @click="scrollUp">
+      <div class="prev">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22" fill="none">
           <path d="M12.5 21.5L1.5 11L12.5 0.500001" stroke="#ACADAF" stroke-linecap="round" />
         </svg>
       </div>
-      <div class="next" @click="scrollDown">
+      <div class="next">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22" fill="none">
           <path d="M0.5 0.5L11.5 11L0.5 21.5" stroke="#ACADAF" stroke-linecap="round" />
         </svg>
@@ -59,120 +70,28 @@
   </div>
 </template>
 
+
 <script>
 import { computed, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
   setup() {
-    const jsonData = ref([]);
-    const listRef = ref(null);
     const store = useStore();
     const newsData = computed(() => store.state.newsData);
 
-    function formatDateTime(dateString) {
-      const targetDate = new Date(dateString);
-      const currentDate = new Date();
-      const timeDifference = currentDate - targetDate;
-
-      const minutes = Math.floor(timeDifference / (1000 * 60));
-      const hours = Math.floor(timeDifference / (1000 * 60 * 60));
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-      if (minutes < 1) {
-        return '1分钟前';
-      } else if (hours < 1) {
-        return `${minutes}分钟前`;
-      } else if (hours < 12) {
-        return `${hours}小时前`;
-      } else {
-        const formattedYear = targetDate.getFullYear();
-        const formattedMonth = (targetDate.getMonth() + 1).toString().padStart(2, '0');
-        const formattedDay = targetDate.getDate().toString().padStart(2, '0');
-        const formattedHours = targetDate.getHours().toString().padStart(2, '0');
-        const formattedMinutes = targetDate.getMinutes().toString().padStart(2, '0');
-        return `${formattedYear}年${formattedMonth}月${formattedDay}日 ${formattedHours}:${formattedMinutes}`;
-      }
-    }
-
-
-
-
-    function fetchData(apiUrl) {
-      // 异步获取JSON数据
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          jsonData.value = data;
-        })
-        .catch(error => {
-          console.error('Error fetching JSON data: ', error);
-        });
-
-      listRef.value = document.querySelector('.zcool .list-wrap ul');
-    }
-
-
-    // 模拟异步获取JSON数据
+    // 在组件加载时触发获取新闻数据的动作
     onMounted(() => {
-      // fetchData('/json/zcool.json');
-      store.dispatch('fetchNewsData', 'https://v2ex.com/index.xml');
+      store.dispatch('fetchNewsData', 'https://www.zhihu.com/rss');
     });
 
-    function handleScroll(event) {
-      // 处理滚轮事件，根据滚轮方向判断向上或向下滚动
-      const remainingScroll = listRef.value.scrollHeight - listRef.value.scrollTop - listRef.value.clientHeight;
-      if (event.deltaY > 0 && remainingScroll > 0) {
-        // 向下滚动
-        listRef.value.scrollTo({
-          top: listRef.value.scrollTop + remainingScroll,
-          behavior: 'smooth'
-        });
-      } else if (event.deltaY < 0 && listRef.value.scrollTop > 0) {
-        // 向上滚动
-        listRef.value.scrollTo({
-          top: listRef.value.scrollTop - listRef.value.clientHeight,
-          behavior: 'smooth'
-        });
-      }
-    }
-
-    function scrollDown() {
-      // 向下滚动
-      const remainingScroll = listRef.value.scrollHeight - listRef.value.scrollTop - listRef.value.clientHeight;
-      listRef.value.scrollTo({
-        top: listRef.value.scrollTop + remainingScroll,
-        behavior: 'smooth'
-      });
-    }
-
-    function scrollUp() {
-      // 向上滚动
-      listRef.value.scrollTo({
-        top: listRef.value.scrollTop - listRef.value.clientHeight,
-        behavior: 'smooth'
-      });
-    }
-
-
-    function handleItemClick(item) {
-      window.open(item.href, '_blank');
-    }
-
     return {
-      jsonData,
       newsData,
-      handleScroll,
-      scrollUp,
-      scrollDown,
-      handleItemClick,
-      fetchData,
-      formatDateTime
     };
-  }
+  },
 };
-
 </script>
+
 
 <style scoped lang="scss">
 div.zcool {
@@ -296,7 +215,11 @@ div.zcool {
 
     }
   }
+
+
 }
+
+
 
 .list-wrap {
   width: 100%;
@@ -307,30 +230,36 @@ div.zcool {
     padding: 10px;
     display: grid;
     /* grid-template-columns: repeat(auto-fill, minmax(calc(50% - 25px), 1fr)); */
-    grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     row-gap: 10px;
     column-gap: 5px;
     width: 100%;
     height: 100%;
     overflow-y: auto;
 
+    /* 隐藏默认滚动条 */
+    /* Hide the default scrollbar */
     &::-webkit-scrollbar {
       width: 8px;
     }
 
+    /* Track (滚动条的背景) */
     &::-webkit-scrollbar-track {
       background: #2e343f;
       cursor: pointer;
     }
 
+    /* Handle (滚动条上的拖动手柄) */
     &::-webkit-scrollbar-thumb {
       background: rgb(66, 79, 100);
       border-radius: 4px;
     }
 
+    /* Handle on hover (鼠标悬停时的滚动条拖动手柄) */
     &::-webkit-scrollbar-thumb:hover {
       background: #4f5a6f;
     }
+
 
     li {
       overflow: hidden;
@@ -340,72 +269,45 @@ div.zcool {
       border-radius: 5px;
       background-color: transparent;
       align-content: start;
-      padding: 8px;
+      padding: 5px;
       transition: all 0.15s ease;
       cursor: pointer;
-      height: 100px;
+      height: 200px;
 
       &:hover {
-        background-color: #191d22;
+        background-color: #4f5a6f;
 
         img {
           transform: scale(1.12);
         }
       }
 
-      i {
-        font-size: 12px;
+      .img-wrap {
+        border-radius: 5px;
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+      }
+
+      h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-family: Roboto Mono;
+        font-size: 14px;
         font-style: normal;
-        color: #6b7b98;
+        font-weight: 500;
+        line-height: normal;
+        color: #d9d9d9;
       }
-
-      a {
-        user-select: none;
-        text-decoration: none;
-        color: #999;
-
-        .img-wrap {
-          border-radius: 5px;
-          overflow: hidden;
-
-          img {
-            display: none;
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-          }
-
-        }
-
-        h3 {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-family: Roboto Mono;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: normal;
-          color: #d9d9d9;
-        }
-
-        p {
-          font-size: 14px;
-          color: #9ca7ba;
-          height: 30px;
-          overflow: hidden;
-        }
-
-      }
-
-
-
-
     }
-
   }
 }
-
 
 @media (max-width: 300px) {
   ul {

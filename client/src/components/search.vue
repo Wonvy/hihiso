@@ -7,7 +7,7 @@
     <div class="input-wrap">
       <input v-model="inputText" placeholder="请输入搜索的内容" />
       <a href="" target="_blank">
-        <img src="favicon/google.com.ico" />
+        <img src="/favicon/google.com.ico" />
       </a>
     </div>
 
@@ -16,7 +16,7 @@
 
         <li>
           <a data-href="http://www.google.com/" data-search="http://www.google.com/search?q={s}">
-            <img src="favicon/google.com.ico" />
+            <img src="/favicon/google.com.ico" />
             <p>google</p>
           </a>
         </li>
@@ -44,14 +44,14 @@
 
         <li>
           <a data-href="http://www.zhihu.com/" data-search="https://www.zhihu.com/search?type=question&q={s}" title="知乎">
-            <img src="favicon/zhihu.com.ico">
+            <img src="/favicon/zhihu.com.ico">
             <p>知乎</p>
           </a>
         </li>
 
         <li>
           <a data-href="http://www.baidu.com/" data-search="https://www.baidu.com/s?wd={s}" title="百度一下">
-            <img src="favicon/baidu.com.ico">
+            <img src="/favicon/baidu.com.ico">
             <p>百度</p>
           </a>
         </li>
@@ -253,7 +253,7 @@ export default {
 .input-wrap {
   display: flex;
   height: 56px;
-  padding: 0px 19px;
+  padding: 0px 10px 0px 19px;
   justify-content: space-between;
   align-items: center;
   align-self: stretch;
@@ -279,10 +279,23 @@ export default {
     line-height: 100%;
   }
 
-  img {
-    user-select: none;
-    cursor: pointer;
+  a {
+    display: flex;
+    height: 100%;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 28px;
+      height: 28px;
+      user-select: none;
+      cursor: pointer;
+    }
+
   }
+
+
 
 }
 

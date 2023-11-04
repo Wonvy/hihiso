@@ -1,12 +1,18 @@
 const express = require('express');
 const axios = require('axios');
-// const fetch = require('node-fetch');
 const Parser = require('rss-parser');
+const cors = require('cors');
 const parser = new Parser();
 const app = express();
 const cheerio = require('cheerio');
-const PORT = 3002;
+const PORT = 3000;
 
+const corsOptions = {
+  origin: 'http://127.0.0.1:5173', // 允许来自这个来源的请求
+  methods: 'GET', // 允许 GET 请求
+};
+
+app.use(cors(corsOptions)); // 使用cors中间件，允许所有来源访问
 app.use(express.static('public'));
 
 app.get('/icon', async (req, res) => {
@@ -46,8 +52,6 @@ app.get('/rss', async (req, res) => {
   }
 });
 
-
-
 app.get('/website', async (req, res) => {
   const url = req.query.url; // 从查询参数中获取网址
   try {
@@ -56,14 +60,6 @@ app.get('/website', async (req, res) => {
     const $ = cheerio.load(html);
     const title = $('title').text();
     const description = $('meta[name="description"]').attr('content') || '';
-    // const metaTags = [];
-    // $('meta').each((index, element) => {
-    //   const name = $(element).attr('name');
-    //   const content = $(element).attr('content');
-    //   if (name && content && name === 'description') {
-    //     metaTags.push({ name, content });
-    //   }
-    // });
     res.json({ title, description });
   } catch (error) {
     console.error('Error:', error);
