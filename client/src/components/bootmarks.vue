@@ -3,16 +3,16 @@
     <section v-for="(category, index) in categories" :key="index">
       <h3><i class="iconfont">{{ category.icon }}</i>{{ category.category }}</h3>
       <ul class="love">
-        <li v-for="(website, websiteIndex) in category.websites.slice(0, 3)" :key="websiteIndex">
-          <a :data-href="website.url" :data-search="website.searchUrl">
+        <li @mouseout="ul_mouseout" v-for="(website, websiteIndex) in category.websites.slice(0, 3)" :key="websiteIndex">
+          <a :data-href="website.url" :data-rss="website.rss" :data-search="website.searchUrl">
             <img :src="website.iconUrl" alt="website.name">
             <p>{{ website.name }}</p>
           </a>
         </li>
       </ul>
       <ul class="all">
-        <li v-for="(website, websiteIndex) in category.websites.slice(3)" :key="websiteIndex">
-          <a target="_blank" :data-href="website.url" :data-search="website.searchUrl">
+        <li @mouseout="ul_mouseout" v-for="(website, websiteIndex) in category.websites.slice(3)" :key="websiteIndex">
+          <a target="_blank" :data-rss="website.rss" :data-href="website.url" :data-search="website.searchUrl">
             <img :src="website.iconUrl" alt="website.name">
             <p>{{ website.name }}</p>
           </a>
@@ -48,9 +48,6 @@ export default {
       const a = li.querySelector('a');
       const p = li.querySelector('p');
       const curimg = a.querySelector('img');
-
-      store.dispatch('fetchNewsData', a.dataset.search);
-
       // 替换搜索引擎的关键词
       let url;
       if (input_text === null || input_text === undefined || input_text === '') {
@@ -63,16 +60,44 @@ export default {
       el_input_img.setAttribute("src", curimg.getAttribute("src"));
       el_input_a.setAttribute("href", url);
       el_h4.innerHTML = `<span style="color:#6edecc;margin:0 4px"> ${p.innerText} </span>搜索`;
+
+
+
+
+      const feedurl = a.dataset.rss;
+      const timeoutId = setTimeout(() => {
+        if (feedurl && feedurl !== '') {
+          store.commit('SET_CurrentFetchUrl', feedurl);
+          console.log('feedurl', feedurl)
+          store.dispatch('fetchNewsData', feedurl);
+        }
+      }, 400);
+      li.dataset.timeoutId = timeoutId;
+
+    }
+
+    function ul_mouseout(event) {
+      const li = event.target.closest('li')
+      if (!li) { return }
+      // console.log(li, li.dataset.timeoutId);
+      const timeoutId = li.dataset.timeoutId;
+      if (timeoutId !== 'null') {
+        li.dataset.timeoutId = "";
+        clearTimeout(parseInt(timeoutId));
+      }
     }
 
 
+
+
     onMounted(() => {
-      store.dispatch('fetchFavorites', '/json/websites.json');
+      store.dispatch('fetchFavorites', '/json/websites.json'); // 初始化数据
     });
 
     return {
       categories,
-      ul_mouseover
+      ul_mouseover,
+      ul_mouseout
     };
   }
 };

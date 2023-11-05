@@ -242,7 +242,6 @@ export default {
 .lang {
   padding: 0 20px;
   color: #B4B4B4;
-  font-family: Roboto Mono;
   font-size: 14px;
   font-style: normal;
   font-weight: 300;
@@ -271,7 +270,6 @@ export default {
     background-color: transparent;
     border: none;
     color: #FFF;
-    font-family: Roboto Mono;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;

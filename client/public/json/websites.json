@@ -5,30 +5,35 @@
       {
         "url": "https://www.zhihu.com/",
         "searchUrl": "https://www.zhihu.com/rss",
+        "rss": "https://www.zhihu.com/rss",
         "iconUrl": "https://static.zhihu.com/heifetz/assets/apple-touch-icon-152.81060cab.png",
         "name": "知乎"
       },
       {
         "url": "https://sspai.com/",
         "searchUrl": "https://sspai.com/feed",
+        "rss": "https://sspai.com/feed",
         "iconUrl": "https://cdn-static.sspai.com/favicon/sspai.ico",
         "name": "少数派"
       },
       {
         "url": "https://v2ex.com",
         "searchUrl": "https://v2ex.com/index.xml",
+        "rss": "https://v2ex.com/index.xml",
         "iconUrl": "https://v2ex.com/static/favicon.ico",
         "name": "v2ex"
       },
       {
         "url": "https://www.appinn.com/",
         "searchUrl": "https://feeds.appinn.com/appinns/",
+        "rss": "https://feeds.appinn.com/appinns/",
         "iconUrl": "https://static1.appinn.com/stwww/wp-content/uploads/Appinn-icon-152.jpg",
         "name": "小众软件"
       },
       {
         "url": "https://www.geekpark.net/",
         "searchUrl": "https://www.geekpark.net/rss",
+        "rss": "https://www.geekpark.net/rss",
         "iconUrl": "https://imgslim.geekpark.net/geekpark-icon-196-black.png",
         "name": "极客公园"
       }
@@ -52,6 +57,7 @@
       {
         "url": "http://dribbble.com/",
         "searchUrl": "http://dribbble.com/search?q=",
+        "rss": "https://rsshub.app/dribbble/popular",
         "iconUrl": "favicon/dribbble.com.ico",
         "name": "dribbble"
       },
