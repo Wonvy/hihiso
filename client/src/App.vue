@@ -27,16 +27,17 @@ import bootmarks from './components/bootmarks.vue'
 
   </header>
 
-  <main>
+  <main ref="container">
 
-    <div class="left">
+    <div ref="left" class="left" :style="{ width: leftPanelWidth + '%' }">
       <list />
+      <div class="resizer" @mousedown="startResize">
+      </div>
     </div>
 
-    <div class="resize">
-    </div>
 
-    <div class="right">
+
+    <div ref="right" class="right" :style="{ width: rightPanelWidth + '%' }">
       <div class="search-wrap">
         <search />
       </div>
@@ -45,6 +46,57 @@ import bootmarks from './components/bootmarks.vue'
 
   </main>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      isResizing: false,
+      startX: 0,
+      initialLeftPanelWidth: 20, // 初始左侧面板宽度百分比
+      containerWidth: 0, // 容器宽度，初始为0
+      leftPanelWidth: 20, // 左侧面板宽度百分比
+      rightPanelWidth: 80, // 右侧面板宽度百分比
+
+    };
+  },
+
+  mounted() {
+    // 在组件挂载完成后获取容器的宽度
+    this.$nextTick(() => {
+      this.containerWidth = this.$refs.container.clientWidth;
+      this.leftPanelWidth = this.$refs.left.clientWidth / this.containerWidth * 100;
+      this.rightPanelWidth = 100 - this.leftPanelWidth;
+    });
+
+  },
+
+  methods: {
+
+    startResize(event) {
+      this.isResizing = true;
+      this.startX = event.clientX;
+      this.initialLeftPanelWidth = this.leftPanelWidth;
+      document.addEventListener('mousemove', this.handleMouseMove);
+      document.addEventListener('mouseup', this.stopResize);
+    },
+    handleMouseMove(event) {
+      if (this.isResizing) {
+        const deltaX = event.clientX - this.startX;
+        const newLeftPanelWidth = this.initialLeftPanelWidth + (deltaX / this.containerWidth) * 100;
+        this.leftPanelWidth = Math.max(10, Math.min(80, newLeftPanelWidth));
+        this.rightPanelWidth = 100 - this.leftPanelWidth;
+      }
+    },
+    stopResize() {
+      this.isResizing = false;
+      document.removeEventListener('mousemove', this.handleMouseMove);
+      document.removeEventListener('mouseup', this.stopResize);
+    }
+  }
+};
+</script>
+
+
 
 <style scoped lang="scss">
 header {
@@ -98,6 +150,7 @@ header {
 }
 
 main {
+  position: relative;
   display: flex;
   width: 100%;
   height: calc(100% - 50px);
@@ -105,12 +158,30 @@ main {
   background-color: #21252b;
 
   .left {
-    padding: 30px;
-    width: 30%;
+    position: relative;
+    // padding: 30px;
+    // width: 30%;
+  }
+
+
+  .resizer {
+    width: 6px;
+    height: 100%;
+    background-color: transparent;
+    cursor: ew-resize;
+    position: absolute;
+    top: 0;
+    right: -3px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #2a7a9d;
+    }
   }
 
   .right {
     display: flex;
+    padding: 0 40px;
     align-items: center;
     justify-content: flex-start;
     width: 70%;
