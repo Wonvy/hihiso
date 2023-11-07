@@ -52,6 +52,21 @@ app.get('/rss', async (req, res) => {
   }
 });
 
+app.get('/bing', async (req, res) => {
+  const qry = req.query.url; // 从查询参数中获取网址
+  try {
+    const url = `https://www.bing.com/AS/Suggestions?pt=page.home&mkt=ko-kr&qry=${qry}&cp=2&msbqf=false&cvid=$%7Bthis.generateCvid()%7D`;
+    // console.log(url);
+    const response = await axios.get(url);
+    const html = response.data;
+    res.send(html);
+  } catch (error) {
+    console.error('Error:', error);
+    return { error: error.message };
+  }
+});
+
+
 app.get('/website', async (req, res) => {
   const url = req.query.url; // 从查询参数中获取网址
   try {
@@ -66,6 +81,48 @@ app.get('/website', async (req, res) => {
     return { error: error.message };
   }
 });
+
+// http://127.0.0.1:3000/site?url=http://www.baidu.com
+app.get('/site', async (req, res) => {
+  const url = req.query.url; // 从查询参数中获取网址
+  try {
+    // 同时发起获取网站图标和网站内容的请求
+    const [iconResponse, websiteResponse] = await Promise.all([
+      axios.get('https://besticon-demo.herokuapp.com/allicons.json?url=' + url),
+      axios.get(url)
+    ]);
+
+    // 解析网站图标
+    const iconJsonData = iconResponse.data;
+    let icon = '';
+    let img64 = '';
+    if (iconJsonData.icons.length > 0) {
+      const firstIcon = iconJsonData.icons[0];
+      icon = firstIcon.url;
+      img64 = await convertImageToBase64(firstIcon.url);
+    }
+
+    // 解析网站内容
+    const html = websiteResponse.data;
+    const $ = cheerio.load(html);
+    const title = $('title').text();
+    const description = $('meta[name="description"]').attr('content') || '';
+
+    // 构建响应数据
+    const responseData = {
+      title: title,
+      description: description,
+      icon: icon,
+      img64: img64
+    };
+
+    res.json(responseData);
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Error fetching website data');
+  }
+});
+
 
 app.get('/', (req, res) => {
   console.log(__dirname);

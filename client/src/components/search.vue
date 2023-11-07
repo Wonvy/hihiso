@@ -1,14 +1,23 @@
 <template>
   <div id="search">
-    <div class="lang" @click="lang_click">
+    <!-- <div class="lang" @click="lang_click">
       {{ translatedText }}
-    </div>
+    </div> -->
 
     <div class="input-wrap">
       <input v-model="inputText" placeholder="请输入搜索的内容" />
       <a href="" target="_blank">
         <img src="/favicon/google.com.ico" />
       </a>
+
+      <ul class="baidu" @click="bing_click">
+        <li class="lang" @click="lang_click"> {{ translatedText }} </li>
+        <li v-for="suggestion in suggestions" :key="suggestion.url">
+          <a :data-href="suggestion.url" target="_blank">{{ suggestion.text }}</a>
+        </li>
+      </ul>
+      <!-- <bing :searchTerm="inputText" /> -->
+
     </div>
 
     <div class="commonly_used">
@@ -60,27 +69,54 @@
       <h4>快捷搜索</h4>
     </div>
 
-
   </div>
 </template>
 
 <script>
 import { ref, onMounted, watch } from 'vue';
+// import bing from './bing.vue'
+import cheerio from 'cheerio';
 
 export default {
+
   setup() {
 
     const inputText = ref(""); // 输入文本
     const translatedText = ref(""); // 翻译结果
+    let suggestions = ref([]);
 
     // 监听inputText的变化，并实时翻译文本
     watch(inputText, async (newValue) => {
       if (newValue === "") {
         translatedText.value = "";
+        suggestions.value = [];
         return;
       }
       translatedText.value = await translateText(newValue);
+      suggestions.value = await getbing(newValue);
     });
+
+    async function getbing(searchTerm) {
+      try {
+        const response = await fetch(`http://127.0.0.1:3000/bing?url=${searchTerm}`);
+        const data = await response.text();
+        return parseHTML(data);
+      } catch (error) {
+        console.error('Error:', error);
+        return []; // 返回空数组或其他默认值，表示请求失败
+      }
+    }
+
+    function parseHTML(htmlString) {
+      const $ = cheerio.load(htmlString);
+      const data = [];
+      $('.sa_sg').each((index, element) => {
+        const url = $(element).attr('url');
+        const text = $(element).find('.sa_tm_text').text();
+        data.push({ url, text });
+      });
+      return data;
+    }
 
     // 替换搜索引擎的关键词，并翻译文本
     async function translateText(text) {
@@ -152,6 +188,11 @@ export default {
       }
     }
 
+    function bing_click(e) {
+      const li = e.target.closest('li');
+      if (!li) { return };
+      console.log(li)
+    }
 
     function lang_click(event) {
       const el_input = document.querySelector('.input-wrap input');
@@ -159,6 +200,7 @@ export default {
       const text = el_input.value;
       el_input.value = el_lang.innerText;
       el_lang.innerText = text;
+      // suggestions.value = [];
     }
 
     function use_click(event) {
@@ -215,13 +257,18 @@ export default {
 
 
     return {
+      bing_click,
+      getbing,
       lang_click,
       use_click,
       ul_mouseover,
       inputText,
       translatedText,
-
+      suggestions
     };
+  },
+  components: {
+    // bing
   }
 
 
@@ -229,6 +276,7 @@ export default {
 
 
 </script>
+
 
 <style scoped lang="scss">
 #search {
@@ -239,17 +287,8 @@ export default {
 }
 
 
-.lang {
-  padding: 0 20px;
-  color: #B4B4B4;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
-  user-select: none;
-  cursor: pointer;
-}
-
 .input-wrap {
+  position: relative;
   display: flex;
   height: 56px;
   padding: 0px 10px 0px 19px;
@@ -259,10 +298,16 @@ export default {
   border-radius: 63px;
   background: #2C313A;
   transition: all 0.3s ease;
+  user-select: none;
 
   &:hover {
     background: #444c5b;
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.20);
+    border-radius: 10px 10px 0 0;
+
+    .baidu {
+      visibility: visible;
+    }
   }
 
   input {
@@ -277,12 +322,15 @@ export default {
     line-height: 100%;
   }
 
-  a {
+  >a {
+    position: absolute;
+    right: 4px;
     display: flex;
     height: 100%;
     width: 50px;
     justify-content: center;
     align-items: center;
+    user-select: none;
 
     img {
       width: 28px;
@@ -291,6 +339,63 @@ export default {
       cursor: pointer;
     }
 
+  }
+
+  .baidu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    background-color: #444c5b;
+    top: 56px;
+    left: 0;
+    z-index: 5;
+    border-radius: 0 0 10px 10px;
+    padding: 0;
+    visibility: hidden;
+    // max-height: 120px;
+    overflow: hidden;
+
+    li {
+      position: relative;
+      display: flex;
+      height: 30px;
+      padding: 0 20px;
+      transition: all 0.1s ease;
+      cursor: pointer;
+      user-select: none;
+      align-items: center;
+      color: rgb(192, 192, 192);
+
+      &.lang {
+        font-weight: 600;
+        height: 40px;
+        // border-bottom: 1px solid #535d6e;
+      }
+
+      &:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        width: calc(100% - 40px);
+        top: 0;
+        border-top: 1px solid #535d6e;
+      }
+
+      &:hover {
+        color: #fff;
+        background-color: #2C313A;
+      }
+
+      a {
+        display: flex;
+        text-align: left;
+        width: 100%;
+
+        text-decoration: none;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
   }
 
 
@@ -355,6 +460,7 @@ export default {
         }
       }
     }
+
   }
 }
 </style>

@@ -59,7 +59,7 @@
         <li v-for="(item, index) in  newsData.items " :key="index" :data-url="item.link" @click="handleItemClick(item)">
           <a :href=item.link target="_blank">
             <div class="img-wrap">
-              <img :src="extractFirstImageUrl(item.content)" alt="Image" />
+              <!-- <img :src="extractFirstImageUrl(item.content)" alt="Image" /> -->
             </div>
             <div class="detail">
               <h3>{{ item.title }}</h3>
@@ -164,8 +164,11 @@ export default {
       // console.log(event.target);
       const el_ul = event.target.closest("ul");
       if (!el_ul) { return };
+      const firstLi = el_ul.querySelector('li');
 
-      const remainingScroll = el_ul.scrollHeight - el_ul.scrollTop - el_ul.clientHeight;
+
+      // const remainingScroll = el_ul.clientHeight;
+      const remainingScroll = firstLi.clientHeight * 4;
       if (event.deltaY > 0 && remainingScroll > 0) {
         // 向下滚动
         el_ul.scrollTo({
@@ -184,8 +187,9 @@ export default {
     function scrollDown(event) {
       const el_ul = document.querySelector('.zcool .list-wrap ul');
       if (!el_ul) { return };
+      const firstLi = el_ul.querySelector('li');
       // 向下滚动
-      const remainingScroll = el_ul.scrollHeight - el_ul.scrollTop - el_ul.clientHeight;
+      const remainingScroll = firstLi.clientHeight * 4;
       el_ul.scrollTo({
         top: el_ul.scrollTop + remainingScroll,
         behavior: 'smooth'
@@ -351,13 +355,14 @@ div.zcool {
     list-style: none;
     padding: 10px;
     display: grid;
-    /* grid-template-columns: repeat(auto-fill, minmax(calc(50% - 25px), 1fr)); */
     grid-template-columns: repeat(auto-fill, minmax(1fr, 1fr));
-    // row-gap: 10px;
-    // column-gap: 5px;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(auto-fill, calc(50% - 25px));
+    }
 
     &::-webkit-scrollbar {
       width: 8px;
@@ -387,18 +392,19 @@ div.zcool {
       align-content: start;
       // padding: 0 10px;
       padding-bottom: 12px;
-      transition: all 0.15s ease;
+      // transition: background-color 0.15s ease;
       cursor: pointer;
       border-bottom: 1px solid #4b596e;
       height: 140px;
       align-items: left;
       justify-content: center;
+      user-select: none;
 
       &:hover {
         background-color: #191d22;
 
         img {
-          transform: scale(1.12);
+          // transform: scale(1.12);
         }
       }
 
@@ -424,7 +430,7 @@ div.zcool {
             height: auto;
             object-fit: fill;
             border-radius: 10px;
-            transition: transform 0.3s ease;
+            // transition: transform 0.3s ease;
           }
 
         }
