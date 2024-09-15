@@ -36,6 +36,13 @@
         "rss": "https://www.geekpark.net/rss",
         "iconUrl": "https://imgslim.geekpark.net/geekpark-icon-196-black.png",
         "name": "极客公园"
+      },
+      {
+        "url": "https://500px.com.cn/",
+        "searchUrl": "https://500px.com.cn/",
+        "rss": "https://rsshub.app/500px/tribe/set/f5de0b8aa6d54ec486f5e79616418001",
+        "iconUrl": "https://node-uat.500px.me/images/logo-500px-2020.svg",
+        "name": "500px"
       }
     ]
   },
@@ -44,56 +51,56 @@
     "websites": [
       {
         "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
+        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world={s}",
         "iconUrl": "favicon/www.zcool.com.cn.ico",
         "name": "站酷网"
       },
       {
         "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
+        "searchUrl": "http://huaban.com/search/?q={s}",
         "iconUrl": "favicon/huaban.com.ico",
         "name": "花瓣网"
       },
       {
         "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
+        "searchUrl": "http://dribbble.com/search?q={s}",
         "rss": "https://rsshub.app/dribbble/popular",
         "iconUrl": "favicon/dribbble.com.ico",
         "name": "dribbble"
       },
       {
         "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
+        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world={s}",
         "iconUrl": "favicon/www.zcool.com.cn.ico",
         "name": "站酷网"
       },
       {
         "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
+        "searchUrl": "http://huaban.com/search/?q={s}",
         "iconUrl": "favicon/huaban.com.ico",
         "name": "花瓣网"
       },
       {
         "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
+        "searchUrl": "http://dribbble.com/search?q={s}",
         "iconUrl": "favicon/dribbble.com.ico",
         "name": "dribbble"
       },
       {
         "url": "http://www.zcool.com.cn/",
-        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world=",
+        "searchUrl": "http://www.zcool.com.cn/tosearch.do?world={s}",
         "iconUrl": "favicon/www.zcool.com.cn.ico",
         "name": "站酷网"
       },
       {
         "url": "http://huaban.com/",
-        "searchUrl": "http://huaban.com/search/?q=",
+        "searchUrl": "http://huaban.com/search/?q={s}",
         "iconUrl": "favicon/huaban.com.ico",
         "name": "花瓣网"
       },
       {
         "url": "http://dribbble.com/",
-        "searchUrl": "http://dribbble.com/search?q=",
+        "searchUrl": "http://dribbble.com/search?q={s}",
         "iconUrl": "favicon/dribbble.com.ico",
         "name": "dribbble"
       }
@@ -150,19 +157,19 @@
     "websites": [
       {
         "url": "http://www.yinyuetai.com/",
-        "searchUrl": "http://so.yinyuetai.com/mv?keyword=",
+        "searchUrl": "https://www.yinyuetai.com/search/?keyword={s}",
         "iconUrl": "favicon/www.quanjing.com.ico",
         "name": "音悦Tai"
       },
       {
         "url": "http://www.xiami.com/",
-        "searchUrl": "http://www.xiami.com/search?key=",
+        "searchUrl": "http://www.xiami.com/search?key={s}",
         "iconUrl": "favicon/xiami.net.ico",
         "name": "虾米"
       },
       {
         "url": "http://douban.fm/",
-        "searchUrl": "http://music.douban.com/subject_search?search_text=",
+        "searchUrl": "http://music.douban.com/subject_search?search_text={s}",
         "iconUrl": "favicon/douban.fm.ico",
         "name": "豆瓣FM"
       }
@@ -179,19 +186,19 @@
       },
       {
         "url": "http://www.jianshu.com/",
-        "searchUrl": "http://www.jianshu.com/search?q=",
+        "searchUrl": "http://www.jianshu.com/search?q={s}",
         "iconUrl": "favicon/www.jianshu.com.ico",
         "name": "简书"
       },
       {
         "url": "http://www.v2ex.com/",
-        "searchUrl": "https://www.google.com/search?q=site%3Av2ex.com%2Ft+",
+        "searchUrl": "https://www.google.com/search?q={s}",
         "iconUrl": "favicon/www.v2ex.com.ico",
         "name": "v2ex"
       },
       {
         "url": "http://baike.baidu.com/",
-        "searchUrl": "http://baike.baidu.com/search/none?word=",
+        "searchUrl": "http://baike.baidu.com/search/none?word={s}",
         "iconUrl": "favicon/baike.baidu.com.ico",
         "name": "百度百科"
       }

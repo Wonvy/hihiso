@@ -1,25 +1,37 @@
 <template>
   <div id="search">
-    <!-- <div class="lang" @click="lang_click">
-      {{ translatedText }}
-    </div> -->
+    <div class="input-wrap" @mouseleave="bing_hide">
+      <section>
+        <input :class="{ 'bold': inputText }" v-model="inputText" @keydown="input_keydown" @dblclick="input_clean"
+          placeholder="请输入搜索的内容" @mouseover="bing_show" />
+        <p>
+          <span v-if="inputText" @click="input_clean" title="清除">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
+              <path d="M1 13.5L14 0.5" stroke="#A0A0A0" />
+              <path d="M1 0.499999L14 13.5" stroke="#A0A0A0" />
+            </svg>
+          </span>
+          <a href="" target="_blank" @mouseover="bing_hide">
+            <img src="/favicon/google.com.ico" />
+          </a>
 
-    <div class="input-wrap">
-      <input v-model="inputText" placeholder="请输入搜索的内容" />
-      <a href="" target="_blank">
-        <img src="/favicon/google.com.ico" />
-      </a>
+        </p>
 
-      <ul class="baidu" @click="bing_click">
-        <li class="lang" @click="lang_click"> {{ translatedText }} </li>
+      </section>
+      <ul class="bing" @click="bing_click" @mouseleave="bing_hide">
+        <li v-if="inputText" class="lang" @click="lang_click">
+          <p> {{ translatedText }} </p>
+          <span> 切换语言 </span>
+        </li>
         <li v-for="suggestion in suggestions" :key="suggestion.url">
           <a :data-href="suggestion.url" target="_blank">{{ suggestion.text }}</a>
+          <span>立即搜索</span>
+
         </li>
       </ul>
+
       <!-- <bing :searchTerm="inputText" /> -->
-
     </div>
-
     <div class="commonly_used">
       <ul @click="use_click" @mouseover="ul_mouseover">
 
@@ -68,7 +80,6 @@
       </ul>
       <h4>快捷搜索</h4>
     </div>
-
   </div>
 </template>
 
@@ -92,8 +103,10 @@ export default {
         suggestions.value = [];
         return;
       }
-      translatedText.value = await translateText(newValue);
+      translatedText.value = '正在翻译...'
       suggestions.value = await getbing(newValue);
+      translatedText.value = await translateText(newValue);
+
     });
 
     async function getbing(searchTerm) {
@@ -190,17 +203,34 @@ export default {
 
     function bing_click(e) {
       const li = e.target.closest('li');
+      const el_bing = document.querySelector('.input-wrap');
       if (!li) { return };
-      console.log(li)
+      const a = li.querySelector('a');
+      const text = a.innerText;
+      el_bing.classList.toggle('on');
+      if (li.classList.contains("lang")) { return };
+      inputText.value = text;
     }
 
-    function lang_click(event) {
+    function input_clean(e) {
+      inputText.value = "";
+    }
+
+    function input_keydown(e) {
+      if (e.keyCode === 27) {
+        inputText.value = "";
+      }
+    }
+
+    function lang_click(e) {
       const el_input = document.querySelector('.input-wrap input');
-      const el_lang = event.target
+      const li = e.target.closest('li');
+      if (!li) { return };
+      const el_lang = li.querySelector('p')
       const text = el_input.value;
       el_input.value = el_lang.innerText;
       el_lang.innerText = text;
-      // suggestions.value = [];
+      inputText.value = el_lang.innerText;
     }
 
     function use_click(event) {
@@ -255,11 +285,29 @@ export default {
       el_h4.innerHTML = `<span style="color:#6edecc;margin:0 4px"> ${p.innerText} </span>搜索`;
     }
 
+    function bing_show(e) {
+      const el_name = e.target.tagName;
+      if (el_name === 'A' || el_name === 'IMG') {
+        el_bing.classList.remove('on');
+        return
+      }
+      const el_bing = document.querySelector('.input-wrap');
+      el_bing.classList.add('on');
+    }
+
+    function bing_hide(e) {
+      const el_bing = document.querySelector('.input-wrap');
+      el_bing.classList.remove('on');
+    }
 
     return {
+      bing_hide,
+      bing_show,
       bing_click,
       getbing,
       lang_click,
+      input_clean,
+      input_keydown,
       use_click,
       ul_mouseover,
       inputText,
@@ -291,115 +339,182 @@ export default {
   position: relative;
   display: flex;
   height: 56px;
-  padding: 0px 10px 0px 19px;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  border-radius: 63px;
-  background: #2C313A;
-  transition: all 0.3s ease;
   user-select: none;
 
-  &:hover {
-    background: #444c5b;
+  &.on {
     box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.20);
-    border-radius: 10px 10px 0 0;
 
-    .baidu {
+    section {
+      background: #444c5b;
+      border-radius: 10px;
+    }
+
+    .bing {
       visibility: visible;
     }
+
   }
 
-  input {
-    width: 80%;
-    background-color: transparent;
-    border: none;
-    color: #FFF;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    outline-style: none;
-    line-height: 100%;
-  }
 
-  >a {
-    position: absolute;
-    right: 4px;
+  section {
     display: flex;
-    height: 100%;
-    width: 50px;
-    justify-content: center;
+    height: 56px;
+    width: 100%;
+    position: relative;
+    padding: 0px 10px 0px 19px;
     align-items: center;
-    user-select: none;
+    border-radius: 63px;
+    background: #2C313A;
+    // transition: border-radius 0.1s ease;
+    z-index: 6;
 
-    img {
-      width: 28px;
-      height: 28px;
-      user-select: none;
-      cursor: pointer;
+
+    // &:hover {
+    //   +ul.bing {
+    //     visibility: visible;
+    //   }
+    // }
+
+    input {
+      width: 80%;
+      background-color: transparent;
+      border: none;
+      color: #FFF;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      outline-style: none;
+      line-height: 100%;
+      z-index: 6;
+
+      &.bold {
+        font-weight: 700;
+      }
     }
 
-  }
 
-  .baidu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    background-color: #444c5b;
-    top: 56px;
-    left: 0;
-    z-index: 5;
-    border-radius: 0 0 10px 10px;
-    padding: 0;
-    visibility: hidden;
-    // max-height: 120px;
-    overflow: hidden;
-
-    li {
-      position: relative;
+    p {
+      width: 100px;
+      height: 100%;
       display: flex;
-      height: 30px;
-      padding: 0 20px;
-      transition: all 0.1s ease;
-      cursor: pointer;
-      user-select: none;
+      flex-direction: row;
+      gap: 5px;
       align-items: center;
-      color: rgb(192, 192, 192);
-
-      &.lang {
-        font-weight: 600;
-        height: 40px;
-        // border-bottom: 1px solid #535d6e;
-      }
-
-      &:nth-child(2)::before {
-        content: '';
-        position: absolute;
-        width: calc(100% - 40px);
-        top: 0;
-        border-top: 1px solid #535d6e;
-      }
-
-      &:hover {
-        color: #fff;
-        background-color: #2C313A;
-      }
+      justify-content: flex-end;
 
       a {
+        // position: absolute;
+        // right: 4px;
         display: flex;
-        text-align: left;
-        width: 100%;
-
-        text-decoration: none;
+        height: 100%;
+        width: 50px;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-start;
+        user-select: none;
+
+        img {
+          width: 28px;
+          height: 28px;
+          user-select: none;
+          cursor: pointer;
+        }
+
       }
+
+      span {
+        cursor: pointer;
+
+        &:hover {
+          svg path {
+            stroke: #FFF;
+          }
+        }
+
+      }
+
     }
+
+
   }
 
 
 
+}
+
+.bing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  background-color: #444c5b;
+  top: 36px;
+  left: 0;
+  z-index: 5;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 0 0 0;
+  visibility: hidden;
+  // max-height: 120px;
+  overflow: hidden;
+  // transition: all 0.2s ease;
+
+  &.on {
+    visibility: visible;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    height: 30px;
+    padding: 0 20px;
+    // transition: all 0.1s ease;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    color: rgb(192, 192, 192);
+
+    &.lang {
+      font-weight: 600;
+      height: 40px;
+      // border-bottom: 1px solid #535d6e;
+    }
+
+    &:nth-child(2)::before {
+      content: '';
+      position: absolute;
+      width: calc(100% - 40px);
+      top: 0;
+      border-top: 1px solid #535d6e;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #2C313A;
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: flex;
+      text-align: left;
+      width: 100%;
+      text-decoration: none;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    span {
+      opacity: 0;
+      position: absolute;
+      right: 15px;
+      color: #8E8E8E;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
 }
 
 .commonly_used {

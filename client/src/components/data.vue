@@ -9,7 +9,6 @@
         <a :href="newsData.link" target="_blank">
           <h2>{{ newsData.title }}</h2>
         </a>
-
       </div>
       <div class="view">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="22" viewBox="0 0 24 22" fill="none">
@@ -18,7 +17,6 @@
           <path d="M13.8696 1H23V9H13.8696V1Z" stroke="#5A6B8A" stroke-linejoin="round" />
           <path d="M13.8696 13H23V21H13.8696V13Z" stroke="#5A6B8A" stroke-linejoin="round" />
         </svg>
-
         <ul class="popup">
           <li>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -59,19 +57,19 @@
         <li v-for="(item, index) in  newsData.items " :key="index" :data-url="item.link" @click="handleItemClick(item)">
           <a :href=item.link target="_blank">
             <div class="img-wrap">
-              <!-- <img :src="extractFirstImageUrl(item.content)" alt="Image" /> -->
+              <img v-lazy="extractFirstImageUrl(item.content)" :data-src="extractFirstImageUrl(item.content)"
+                alt="Image" />
             </div>
             <div class="detail">
               <h3>{{ item.title }}</h3>
+              <p :data-content="item.content">{{ extractFirstImageUrl(item.content) }}</p>
               <p>{{ item.contentSnippet }}</p>
               <i>{{ formatDateTime(item.pubDate) }}</i>
             </div>
           </a>
-
         </li>
       </ul>
     </div>
-
     <div class="footer">
       <div class="prev" @click="scrollUp">
         <svg xmlns="http://www.w3.org/2000/svg" width="13" height="22" viewBox="0 0 13 22" fill="none">
@@ -83,7 +81,6 @@
           <path d="M0.5 0.5L11.5 11L0.5 21.5" stroke="#ACADAF" stroke-linecap="round" />
         </svg>
       </div>
-
     </div>
   </div>
 </template>
@@ -106,10 +103,10 @@ export default {
       if (match && match.length > 1) {
         let imgurl = match[1]
         // imgurl = imgurl.replace(/\.(webp|jpeg|jpg|gif)(\?.*)?$/i, '');
-        console.log(typeof (imgurl), imgurl);
+        // console.log(typeof (imgurl), imgurl);
         return imgurl;
       } else {
-        console.log('null', htmlCode);
+        // console.log('null', htmlCode);
         return null;
       }
     }
@@ -118,7 +115,6 @@ export default {
       const targetDate = new Date(dateString);
       const currentDate = new Date();
       const timeDifference = currentDate - targetDate;
-
       const minutes = Math.floor(timeDifference / (1000 * 60));
       const hours = Math.floor(timeDifference / (1000 * 60 * 60));
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
@@ -229,6 +225,7 @@ export default {
 
 <style scoped lang="scss">
 div.zcool {
+  user-select: none;
   box-sizing: border-box;
   // max-width: 420px;
   height: 100%;
