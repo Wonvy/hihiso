@@ -1,3 +1,8 @@
+npm run dev
+
+nodemon server.js
+
+
 # vue-project
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -27,3 +32,11 @@ npm run dev
 ```sh
 npm run build
 ```
+
+
+运行
+cd client目录下
+npm run dev
+
+根目录下
+ node server/server.js

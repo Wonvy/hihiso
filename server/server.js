@@ -8,12 +8,13 @@ const cheerio = require('cheerio');
 const PORT = 3000;
 
 const corsOptions = {
-  origin: 'http://127.0.0.1:5173', // 允许来自这个来源的请求
+  origin: ['http://127.0.0.1:5173', 'http://localhost:5173'], // 允许这两个源
   methods: 'GET', // 允许 GET 请求
 };
 
 app.use(cors(corsOptions)); // 使用cors中间件，允许所有来源访问
 app.use(express.static('public'));
+app.use(express.static(__dirname)); // 
 
 app.get('/icon', async (req, res) => {
   const url = req.query.url; // 从查询参数中获取网址
