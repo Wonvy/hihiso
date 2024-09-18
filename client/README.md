@@ -1,5 +1,10 @@
+![image](README/1.png)
+
+
+客户端
 npm run dev
 
+服务端
 nodemon server.js
 
 
@@ -34,9 +39,3 @@ npm run build
 ```
 
 
-运行
-cd client目录下
-npm run dev
-
-根目录下
- node server/server.js
